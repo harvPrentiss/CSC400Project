@@ -1,0 +1,61 @@
+<h1>Listing users</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Displayname</th>
+      <th>Password</th>
+      <th>Emailadd</th>
+      <th>Profileimgurl</th>
+      <th>Heightm</th>
+      <th>Weightm</th>
+      <th>Bodyfatm</th>
+      <th>Armsm</th>
+      <th>Forearmsm</th>
+      <th>Waistm</th>
+      <th>Chestm</th>
+      <th>Thighsm</th>
+      <th>Calvesm</th>
+      <th>Shouldersm</th>
+      <th>Neckm</th>
+      <th>Hidestats</th>
+      <th>Hideroutines</th>
+      <th>Hidesoundtrack</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @users.each do |user| %>
+      <tr>
+        <td><%= user.displayName %></td>
+        <td><%= user.password %></td>
+        <td><%= user.emailAdd %></td>
+        <td><%= user.profileImgURL %></td>
+        <td><%= user.heightM %></td>
+        <td><%= user.weightM %></td>
+        <td><%= user.bodyFatM %></td>
+        <td><%= user.armsM %></td>
+        <td><%= user.forearmsM %></td>
+        <td><%= user.waistM %></td>
+        <td><%= user.chestM %></td>
+        <td><%= user.thighsM %></td>
+        <td><%= user.calvesM %></td>
+        <td><%= user.shouldersM %></td>
+        <td><%= user.neckM %></td>
+        <td><%= user.hideStats %></td>
+        <td><%= user.hideRoutines %></td>
+        <td><%= user.hideSoundtrack %></td>
+        <td><%= link_to 'Show', user %></td>
+        <td><%= link_to 'Edit', edit_user_path(user) %></td>
+        <td><%= link_to 'Destroy', user, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New User', new_user_path %>

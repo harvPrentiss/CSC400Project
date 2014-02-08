@@ -1,0 +1,1 @@
+json.extract! @user, :displayName, :password, :emailAdd, :profileImgURL, :heightM, :weightM, :bodyFatM, :armsM, :forearmsM, :waistM, :chestM, :thighsM, :calvesM, :shouldersM, :neckM, :hideStats, :hideRoutines, :hideSoundtrack, :created_at, :updated_at

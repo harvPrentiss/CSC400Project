@@ -1,0 +1,89 @@
+<%= form_for(@user) do |f| %>
+  <% if @user.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@user.errors.count, "error") %> prohibited this user from being saved:</h2>
+
+      <ul>
+      <% @user.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+
+  <div class="field">
+    <%= f.label :displayName %><br>
+    <%= f.text_field :displayName %>
+  </div>
+  <div class="field">
+    <%= f.label :password %><br>
+    <%= f.text_field :password %>
+  </div>
+  <div class="field">
+    <%= f.label :emailAdd %><br>
+    <%= f.text_field :emailAdd %>
+  </div>
+  <div class="field">
+    <%= f.label :profileImgURL %><br>
+    <%= f.text_field :profileImgURL %>
+  </div>
+  <div class="field">
+    <%= f.label :heightM %><br>
+    <%= f.text_field :heightM %>
+  </div>
+  <div class="field">
+    <%= f.label :weightM %><br>
+    <%= f.text_field :weightM %>
+  </div>
+  <div class="field">
+    <%= f.label :bodyFatM %><br>
+    <%= f.text_field :bodyFatM %>
+  </div>
+  <div class="field">
+    <%= f.label :armsM %><br>
+    <%= f.text_field :armsM %>
+  </div>
+  <div class="field">
+    <%= f.label :forearmsM %><br>
+    <%= f.text_field :forearmsM %>
+  </div>
+  <div class="field">
+    <%= f.label :waistM %><br>
+    <%= f.text_field :waistM %>
+  </div>
+  <div class="field">
+    <%= f.label :chestM %><br>
+    <%= f.text_field :chestM %>
+  </div>
+  <div class="field">
+    <%= f.label :thighsM %><br>
+    <%= f.text_field :thighsM %>
+  </div>
+  <div class="field">
+    <%= f.label :calvesM %><br>
+    <%= f.text_field :calvesM %>
+  </div>
+  <div class="field">
+    <%= f.label :shouldersM %><br>
+    <%= f.text_field :shouldersM %>
+  </div>
+  <div class="field">
+    <%= f.label :neckM %><br>
+    <%= f.text_field :neckM %>
+  </div>
+  <div class="field">
+    <%= f.label :hideStats %><br>
+    <%= f.check_box :hideStats %>
+  </div>
+  <div class="field">
+    <%= f.label :hideRoutines %><br>
+    <%= f.check_box :hideRoutines %>
+  </div>
+  <div class="field">
+    <%= f.label :hideSoundtrack %><br>
+    <%= f.check_box :hideSoundtrack %>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+<% end %>
