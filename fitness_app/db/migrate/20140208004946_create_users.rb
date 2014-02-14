@@ -5,17 +5,17 @@ class CreateUsers < ActiveRecord::Migration
       t.string :password
       t.string :emailAdd
       t.string :profileImgURL
-      t.int :heightM
-      t.int :weightM
-      t.int :bodyFatM
-      t.int :armsM
-      t.int :forearmsM
-      t.int :waistM
-      t.int :chestM
-      t.int :thighsM
-      t.int :calvesM
-      t.int :shouldersM
-      t.int :neckM
+      t.integer :heightM
+      t.integer :weightM
+      t.integer :bodyFatM
+      t.integer :armsM
+      t.integer :forearmsM
+      t.integer :waistM
+      t.integer :chestM
+      t.integer :thighsM
+      t.integer :calvesM
+      t.integer :shouldersM
+      t.integer :neckM
       t.boolean :hideStats
       t.boolean :hideRoutines
       t.boolean :hideSoundtrack
