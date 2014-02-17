@@ -1,14 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-  <title>Pulse Fitness | <%= yield(:title) %></title>
+  <title><%= full_title(yield(:title)) %></title>
   <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
   <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
   <%= csrf_meta_tags %>
 </head>
 <body>
-
-<%= yield %>
-
+	<header>
+		<%= link_to "Pulse Fitness", class:"title" %>
+		<nav class="nav">
+			<div class="nav-mobile"></div>
+			<ul class="navList">
+				<li><%= link_to "Prolfile", class:"navItem" %></li>
+				<li><%= link_to "Settings", class:"navItem" %></li>
+				<li><%= link_to "Sign In", class:"navItem" %></li>
+			</ul>
+		</nav>
+	</header>
+	<main>
+		<%= yield %>
+	</main>
 </body>
 </html>

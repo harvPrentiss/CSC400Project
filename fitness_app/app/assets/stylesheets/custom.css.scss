@@ -1,0 +1,309 @@
+html
+{
+	height: 100%;
+}
+
+body 
+{	
+	margin: 0;
+	overflow-x: hidden;
+	font-size: 14pt;
+	background-color: #272822;
+}
+
+header{
+	position: fixed;
+	top: 0;
+	width: 100%;
+	background-color: black;
+	color: white;
+}
+
+main{
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding: 20px 40px;
+}
+
+#tagBox{
+	
+	background-color: rgba(10, 10, 10, 0.5);
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 5px;
+	margin: 5px;
+	margin-bottom: 10px;
+	text-align: center;
+	color: rgba(182, 182, 182, 1);
+	overflow: hidden;
+	max-height: 100px;
+}
+
+#leftBox{
+	box-sizing: border-box;
+	float: left;
+	width: 25%;
+	background-color: rgba(10, 10, 10, 0.2);
+	padding: 10px;
+}
+
+#middleBox{
+	box-sizing: border-box;
+	float: left;
+	width: 58%;
+	margin: 0px 5px;
+	background-color: rgba(10, 10, 10, 0.2);
+	padding: 10px;
+}
+
+#rightBox{
+	box-sizing: border-box;
+	float: right;
+	width: 15%;
+	background-color: rgba(10, 10, 10, 0.2);
+	padding: 10px;
+}
+
+#stats, #soundtrack, #routines, #buddies{
+	box-sizing: border-box;
+	border: 1px solid black;
+	border-radius: 5px;
+	padding: 2px;
+	margin: 5px;
+	text-align: center;
+	color: rgba(182, 182, 182, 1);
+}
+
+.statsTable{
+	font-size: 14pt;
+	margin: 0px auto;
+	color: rgba(182, 182, 182, 1);
+}
+
+.soundtrackTable{
+	font-size: 10pt;
+	margin: 0px auto;
+	color: rgba(182, 182, 182, 1);
+}
+
+.statsTable td{
+	padding: 5px;
+}
+
+.statHeader{
+	margin: 2px;
+	color: rgba(72, 218, 36, 1);
+	font-size: 16pt;
+}
+
+.boxHeader{
+	text-decoration: none;
+	color: rgba(72, 218, 36, 1);
+	font-size: 16pt;
+}
+
+.title{
+	display: block;
+	float: left;
+	font-size: 20pt;
+	text-decoration: none;
+	padding: 10px;
+	margin-right: 20px;
+	color: rgba(211, 102, 17, 1);
+	z-index: 99;
+}
+.title:hover{
+	color: rgba(255, 173, 0, 1);
+}
+
+.nav-mobile 
+{
+    display:none; /* Hide from browsers that don't support media queries */
+    float: left;
+    height:40px;
+    width:40px;
+    border-radius:5px;
+    -webkit-border-radius:5px;
+    -moz-border-radius:5px;
+    margin: 10px 5px;
+}
+
+.navItem{
+	float: right;
+	width: auto;
+	height: 100%;
+	margin: 0px 10px;
+	text-align: center;
+	text-decoration: none;
+	line-height: 60px;
+	padding: 0px 10px;
+	font-size: 14pt;
+	color: rgba(211, 102, 17, 1);
+	z-index: 10;
+}
+
+.navItem:hover{
+	background-color: #272822;
+	color: rgba(255, 173, 0, 1);
+}
+
+.excerciseLinks{
+	display: block;
+	color: green;
+	text-decoration: none;
+}
+
+.userName{
+	display: block;
+	text-align:center;
+	font-size: 20pt;
+	text-decoration: none;
+	padding: 10px;
+	margin-right: 20px;
+	color: rgba(211, 102, 17, 1);
+	z-index: 99;
+}
+.userName:hover{
+	color: rgba(255, 173, 0, 1);
+}
+
+.profileImage{
+	float: left;
+	height: 100%;
+	width: 100%;
+	max-height: 100px;
+	max-width: 100px;
+	margin-bottom: 10px;
+}
+
+.statusHeader{
+	background-color: rgba(10, 10, 10, 0.5);
+	color: rgba(72, 218, 36, 1);
+	font-style: italic;
+	padding: 10px 5px 10px 10px;
+	border: 1px 1px 0px 0px solid black;
+	border-radius: 5px 5px 0px 0px;
+	font-size: 16pt;
+	margin: 0;
+}
+
+.statuses
+{
+	overflow: hidden;
+	background-color: rgba(10, 10, 10, 0.5);
+	color: rgba(182, 182, 182, 1);
+	padding: 10px 5px 10px 10px;
+	border: 1px solid black;
+	border-radius: 5px;
+	margin-bottom: 2px;
+}
+
+.content{
+	float: left;
+	width: 80%;
+}
+
+.time{
+	float:right;
+	width: 10%;
+	font-size: 10pt;
+}
+
+
+/* Profile card CSS */
+/* entire container, keeps perspective */
+.flip-container 
+{    
+    -webkit-perspective: 1000;
+    -o-perspective: 1000;
+    perspective: 1000;
+
+    margin: 0px auto;
+}
+
+.flip-container, .front, .back 
+{
+    width: 275px;
+	height: 375px;
+    -o-transition: 0.5s linear .5s;
+    -webkit-transition: 0.5s linear .5s;
+    transition: 0.5s linear .5s;
+    -o-transform-style: preserve-3d;    
+    -webkit-transform-style: preserve-3d;    
+    transform-style: preserve-3d;
+}
+
+/* flip the pane when hovered */
+.flip-container:hover .front, .flip-container.hover .front 
+{
+    -o-transform: perspective(1000px) rotateY(-180deg);
+    -webkit-transform: perspective(1000px) rotateY(-180deg);
+    -moz-transform: perspective(1000px) rotateY(-180deg);
+    transform: perspective(1000px) rotateY(-180deg);
+}
+
+.flip-container:hover .back, .flip-container.hover .back
+{
+    -o-transform: perspective(1000px) rotateY(0deg);
+    -webkit-transform: perspective(1000px) rotateY(0deg);
+    -moz-transform: perspective(1000px) rotateY(0deg);
+    transform: perspective(1000px) rotateY(0deg);
+}
+
+/* flip speed goes here */
+.flipper 
+{    
+    -o-transform: perspective(1000px);
+    -webkit-transform: perspective(1000px);
+    -moz-transform: perspective(1000px);
+    transform: perspective(1000px);
+
+    width: 275px;
+	height: 375px;
+
+    position: relative;
+}
+
+.flipperButton{
+	position: fixed;
+	top: 0;
+	right: 0;
+	background: gray;
+	width: 5px;
+	height: 5px;
+	border-top: 2px solid gray;
+	border-right: 2px solid gray;
+}
+
+/* hide back of pane during swap */
+.front, .back 
+{
+    -webkit-backface-visibility: hidden;
+    backface-visibility: hidden;
+
+    position: absolute;
+    top: 0;
+    left: 0;
+    background: rgb(10, 10, 10);
+    height: 100%;
+    border: 3px solid purple;
+}
+
+/* front pane, placed above back */
+.front 
+{
+    z-index: 2;
+}
+
+/* back, initially hidden pane */
+.back 
+{
+    -o-transform: perspective(1000px) rotateY(180deg);
+    -webkit-transform: perspective(1000px) rotateY(180deg);
+    -moz-transform: perspective(1000px) rotateY(180deg);
+    transform: perspective(1000px) rotateY(180deg);
+    font-size: 14pt;
+}
