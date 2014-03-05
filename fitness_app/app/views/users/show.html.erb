@@ -1,1 +1,12 @@
-<%= @user.name %>, <%= @user.email %>
+<% provide(:title, @user.displayName) %>
+<h1>
+	<% if @user.profileImgURL.to_s != '' && @user.profileImgURL  %>
+		<%= image_tag(@user.profileImgURL, alt:@user.displayName) %>
+	<% end %>
+	<%= @user.displayName %>
+	<% unless @user.hideStats %>
+		<h2 class="stats">Height: <%= @user.heightM %></h2>
+		<h2 class="stats">Weight: <%= @user.weightM %></h2>
+		<h2 class="stats">Body Fat: <%= @user.heightM %>%</h2>
+	<% end %>
+</h1>
