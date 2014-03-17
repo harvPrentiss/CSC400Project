@@ -8,17 +8,7 @@
   <%= csrf_meta_tags %>
 </head>
 <body>
-	<header>
-		<%= link_to "Pulse Fitness", "", {:class=>"title"} %>
-		<nav class="nav">
-			<div class="nav-mobile"></div>
-			<ul class="navList">
-				<li><%= link_to "Profile", root_path, class:"navItem" %></li>
-				<li><%= link_to "Settings", "#", class:"navItem" %></li>
-				<li><%= link_to "Sign In", "#", class:"navItem" %></li>
-			</ul>
-		</nav>
-	</header>
+	<%= render 'layouts/header' %>
 	<main>
 		<% flash.each do |key, value| %>
         	<div class="alert alert-<%= key %>"><%= value %></div>

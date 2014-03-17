@@ -1,0 +1,23 @@
+<header>
+  <div>
+    <div>
+      <%= link_to "Pulse Fitness", "", class:"title"%>
+      <nav class="nav">
+        <div class="nav-mobile"></div>
+        <ul class="navList">
+          <% if signed_in? %>
+            <li><%= link_to "Users", '#', class:"navItem" %></li>
+            <li><%= link_to "Profile", current_user, class:"navItem" %></li>
+            <li><%= link_to "Settings", '#', class:"navItem" %></li>
+            <li><%= link_to "Sign out", signout_path, method: "delete", class:"navItem" %></li>
+          <% else %>
+            <li><%= link_to "Sign in", signin_path, class:"navItem" %></li>
+          <% end %>
+        </ul>
+      </nav>
+    </div>
+  </div>
+</header>
+
+
+    
