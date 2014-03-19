@@ -1,6 +1,72 @@
-<h1>Editing user</h1>
+<% provide(:title, "Edit user") %>
+<h1>Update your profile</h1>
 
-<%= render 'form' %>
+<div>
+  <div>
+    <%= form_for(@user) do |f| %>
+      <%= render 'shared/error_messages' %>
 
-<%= link_to 'Show', @user %> |
-<%= link_to 'Back', users_path %>
+      <%= f.label :displayName, "Display Name" %>
+      <%= f.text_field :displayName %>
+
+      <%= f.label :emailAdd, "Email" %>
+      <%= f.text_field :emailAdd %>
+
+      <%= f.label :password %>
+      <%= f.password_field :password %>
+
+      <%= f.label :password_confirmation, "Confirm Password" %>
+      <%= f.password_field :password_confirmation %>
+
+      <%= f.label :profileImgURL, "Profile Image URL" %>
+      <%= f.text_field :profileImgURL %>
+
+      <div class="statEditBox">
+
+	      <%= f.label :heightM, "Height" %>
+	      <%= f.text_field :heightM %>
+
+	      <%= f.label :weightM, "Weight" %>
+	      <%= f.text_field :weightM %>
+
+	      <%= f.label :bodyFatM, "Body Fat %" %>
+	      <%= f.text_field :bodyFatM %>
+
+	      <%= f.label :shouldersM, "Shoulders" %>
+	      <%= f.text_field :shouldersM %>
+
+	      <%= f.label :neckM, "Neck" %>
+	      <%= f.text_field :neckM %>
+
+	      <%= f.label :armsM, "Arms" %>
+	      <%= f.text_field :armsM %>
+
+	      <%= f.label :forearmsM, "Forearms" %>
+	      <%= f.text_field :forearmsM %>
+
+	      <%= f.label :waistM, "Waist" %>
+	      <%= f.text_field :waistM %>
+
+	      <%= f.label :chestM, "Chest" %>
+	      <%= f.text_field :chestM %>
+
+	      <%= f.label :thighsM, "Thighs" %>
+	      <%= f.text_field :thighsM %>
+
+	      <%= f.label :calvesM, "Calves" %>
+	      <%= f.text_field :calvesM %>
+	  </div>
+
+      <%= f.label :hideStats, "Hide Stats" %>
+      <%= f.check_box :hideStats %>
+
+      <%= f.label :hideRoutines, "Hide Routines" %>
+      <%= f.check_box :hideRoutines %>
+
+      <%= f.label :hideSoundtrack, "Hide Sountrack" %>
+      <%= f.check_box :hideSoundtrack %>
+
+      <%= f.submit "Save changes", class: "sbmtBtn" %>
+    <% end %>
+  </div>
+</div>
