@@ -1,4 +1,27 @@
-<h1>Pulse Fitness</h1>
-<p>This is the home page for Pulse Fitness</p>
+<% if signed_in? %>
+  <div >
+    <aside>
+      <section>
+        <%= render 'shared/user_info' %>
+      </section>
+      <section>
+        <%= render 'shared/status_form' %>
+      </section>
+    </aside>
+    <main>
+    	<h3>Status Feed</h3>
+    	<%= render 'shared/feed' %>
+    </main>
+  </div>
+<% else %>
+  <div>
+    <h1>Welcome to Pulse Fitness</h1>
 
-<%link_to "Sign up now!", signup_path %>
+    <h2>
+      This is the home page for Pulse Fitness.
+    </h2>
+
+    <%= link_to "Sign up now!", signup_path,
+                                class: "signUpBtn" %>
+  </div>
+<% end %>

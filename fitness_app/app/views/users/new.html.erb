@@ -3,7 +3,7 @@
 <div id="signUpBox">
 	<%= form_for(@user) do |f| %>
 
-		<%= render 'shared/error_messages' %>
+		<%= render 'shared/error_messages', object: f.object %>
 
 		<%= f.label :displayName, "Display Name" %>
 		<%= f.text_field :displayName %>

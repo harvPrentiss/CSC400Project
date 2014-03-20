@@ -10,6 +10,7 @@ class UsersController < ApplicationController
   
 	def show
 		@user = User.find(params[:id])
+		@statuses = @user.statuses.paginate(page: params[:page])
 	end
 
 	def new
@@ -52,11 +53,6 @@ class UsersController < ApplicationController
   		def user_params
   			params.require(:user).permit(:displayName, :emailAdd, :password, :password_confirmation, :profileImgURL, :heightM, :weightM, :bodyFatM, :armsM,
   				:forearmsM, :waistM, :chestM, :thighsM, :calvesM, :shouldersM, :neckM, :hideStats, :hideRoutines, :hideSoundtrack)
-  		end
-
-  		def signed_in_user
-  			store_location
-  			redirect_to sign_in_url, notice: "Please sign in." unless signed_in?
   		end
 
   		def correct_user

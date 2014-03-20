@@ -2,7 +2,7 @@ class User < ActiveRecord::Base
 	before_save {self.emailAdd = emailAdd.downcase }
 	before_create :create_remember_token
 
-	has_many :statuses
+	has_many :statuses, dependent: :destroy
 	
 	validates :displayName, presence: true, length: {maximum: 15}
 
@@ -19,6 +19,10 @@ class User < ActiveRecord::Base
 
 	def User.hash(token)
 		Digest::SHA1.hexdigest(token.to_s)
+	end
+
+	def feed
+		Status.where("user_id = ?", id)
 	end
 
 	private

@@ -1,5 +1,5 @@
 <% provide(:title, @user.displayName) %>
-<h1>
+<aside class="userCard">
 	<% if @user.profileImgURL.to_s != '' && @user.profileImgURL  %>
 		<%= image_tag(@user.profileImgURL, alt:@user.displayName) %>
 	<% end %>
@@ -9,4 +9,13 @@
 		<h2 class="stats">Weight: <%= @user.weightM %></h2>
 		<h2 class="stats">Body Fat: <%= @user.bodyFatM %>%</h2>
 	<% end %>
-</h1>
+</aside>
+<aside class="statusBlock">
+	<% if @user.statuses.any? %>
+		<h3>Statuses (<%= @user.statuses.count %>)</h3>
+		<ol class="statuses">
+			<%= render @statuses %>
+		</ol>
+		<%= will_paginate @statuses %>
+	<% end %>
+</aside>
