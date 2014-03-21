@@ -19,6 +19,22 @@ header{
 	color: white;
 }
 
+.titleBlock{
+	text-align: center;
+}
+
+.signUpBtn{
+	border: 1px solid hsl(0, 0%, 0%);
+	color: hsl(0, 0%, 100%);
+	background-color: hsl(0, 0%, 0%);
+	text-decoration: none;
+	padding: 10px;
+}
+
+.alert{
+	color: hsl(0, 0%, 0);
+}
+
 main{
 	box-sizing: border-box;
 	width: 100%;
