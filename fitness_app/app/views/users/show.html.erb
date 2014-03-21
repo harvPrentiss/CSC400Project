@@ -4,6 +4,12 @@
 		<%= image_tag(@user.profileImgURL, alt:@user.displayName) %>
 	<% end %>
 	<%= @user.displayName %>
+	<section>
+		<%= render 'shared/stats' %>
+	</section>
+	<section>
+		<%= render 'follow_form' if signed_in? %>
+	</section>
 	<% unless @user.hideStats %>
 		<h2 class="stats">Height: <%= @user.heightM %></h2>
 		<h2 class="stats">Weight: <%= @user.weightM %></h2>

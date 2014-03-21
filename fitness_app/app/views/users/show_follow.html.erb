@@ -1,0 +1,30 @@
+<% provide(:title, @title) %>
+<div >
+  <aside >
+    <section>
+      <!-- Profile image -->
+      <h1><%= @user.displayName %></h1>
+      <span><%= link_to "view my profile", @user %></span>
+      <span><b>Statuses:</b> <%= @user.statuses.count %></span>
+    </section>
+    <section>
+      <%= render 'shared/stats' %>
+      <% if @users.any? %>
+        <div class="user_avatars">
+          <% @users.each do |user| %>
+            <!-- profile images -->
+          <% end %>
+        </div>
+      <% end %>
+    </section>
+  </aside>
+  <div >
+    <h3><%= @title %></h3>
+    <% if @users.any? %>
+      <ul class="users">
+        <%= render @users %>
+      </ul>
+      <%= will_paginate %>
+    <% end %>
+  </div>
+</div>
