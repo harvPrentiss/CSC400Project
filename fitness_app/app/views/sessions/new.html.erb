@@ -1,18 +1,22 @@
 <% provide(:title, "Sign in") %>
-<h1> Sign In</h1>
-
 <div>
-	<div>
+	<div class="centeredContainer">
+		<h1> Sign In</h1>
 		<%= form_for(:session, url: sessions_path) do |f| %>
-			<%= f.label :emailAdd, "Email" %>
-			<%= f.text_field :emailAdd %>
-
-			<%= f.label :password %>
-			<%= f.password_field :password %>
-
-			<%= f.submit "Sign in", class:"signInBtn" %>
+			<%= f.label :emailAdd, "Email", class:"formLabel" %>
+			<%= f.text_field :emailAdd, class:"formField" %>
+			<br>
+			<br>
+			<%= f.label :password, class:"formLabel" %>
+			<%= f.password_field :password, class:"formField" %>
+			<br>
+			<br>
+			<%= f.submit "Sign In", class:"signUpBtn" %>
 		<% end %>
-
-		<p>New user? <%= link_to "Sign up now!", signup_path %></p>
+		<br>
+		<br>
+		<br>
+		<br>
+		<p>New user? <%= link_to "Sign Up", signup_path, class:"signUpBtn" %></p>
 	</div>
 </div>

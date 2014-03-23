@@ -1,22 +1,30 @@
 <% provide(:title, 'Sign Up') %>
-<h1>Sign Up</h1>
-<div id="signUpBox">
-	<%= form_for(@user) do |f| %>
+<div>
+	<div class="centeredContainer">
+		<h1>Sign Up</h1>
+		<%= form_for(@user) do |f| %>
 
-		<%= render 'shared/error_messages', object: f.object %>
+			<%= render 'shared/error_messages', object: f.object %>
 
-		<%= f.label :displayName, "Display Name" %>
-		<%= f.text_field :displayName %>
-
-		<%= f.label :emailAdd, "Email" %>
-		<%= f.text_field :emailAdd %>
-
-		<%= f.label :password %>
-		<%= f.password_field :password %>
-
-		<%= f.label :password_confirmation, "Confirmation" %>
-		<%= f.password_field :password_confirmation %>
-
-		<%= f.submit "Create my account", class: "signupBtn" %>
-	<% end %>
+			<%= f.label :displayName, "Display Name", class:"formLabel" %>
+			<%= f.text_field :displayName, class:"formField" %>
+			<br>
+			<br>
+			<%= f.label :emailAdd, "Email", class:"formLabel" %>
+			<%= f.text_field :emailAdd, class:"formField" %>
+			<br>
+			<br>
+			<%= f.label :password, class:"formLabel" %>
+			<%= f.password_field :password, class:"formField" %>
+			<br>
+			<br>
+			<%= f.label :password_confirmation, "Confirmation", class:"formLabel" %>
+			<%= f.password_field :password_confirmation, class:"formField" %>
+			<br>
+			<br>
+			<br>
+			<br>
+			<%= f.submit "Create My Account", class: "signUpBtn" %>
+		<% end %>
+	</div>
 </div>

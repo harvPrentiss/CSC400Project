@@ -3,7 +3,7 @@
 	<% if @user.profileImgURL.to_s != '' && @user.profileImgURL  %>
 		<%= image_tag(@user.profileImgURL, alt:@user.displayName) %>
 	<% end %>
-	<%= @user.displayName %>
+	<h1 class="userName"><%= @user.displayName %><h1>
 	<section>
 		<%= render 'shared/stats' %>
 	</section>
