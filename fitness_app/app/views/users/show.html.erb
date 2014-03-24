@@ -22,17 +22,26 @@
 </aside>
 
 <section class="middleContent">
-	<% if @user.statuses.any? %>
 		<ol class="statusList">
-			<li><h1 class="userName" style="margin-left: 5px;">Updates(<%= @user.statuses.count %>)</h1></li>
-			<%= render @statuses %>
+			<% if @user.statuses.any? %>
+				<li><h1 class="userName" style="margin-left: 5px;">Whats going on</h1></li>
+				<%= render @statuses %>
+			<% else %>
+				<li><h1 class="userName" style="margin-left: 5px;">Nothing going on :(</h1></li>
+			<% end %>
 		</ol>
 		<%= will_paginate @statuses %>
-	<% end %>
 </section>
 
 <% if @user == current_user %>
 	<section class="rightContent">
-		<h1> Buddies!</h1>
+			<ol class="buddyList">
+				<% if @buddies.any? %>
+					<li><h1 class="userName" style="margin-left: 5px;">Buddies</h1></l1>
+					<%= render @buddies %>
+				<% else %>
+					<li><h1 class="userName" style="margin-left: 5px">No Buddies :(</h1></li>
+				<% end %>
+			</ol>
 	</section>
 <% end %>

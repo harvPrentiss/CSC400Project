@@ -4,9 +4,10 @@ class StatusesController < ApplicationController
 
   def create
     @status = current_user.statuses.build(status_params)
+    store_location
     if @status.save
       flash[:success] = "Status posted successfully!"
-      redirect_to root_url
+      redirect_back_or current_user
     else
       @feed_items = []
       render 'static_pages/home'
@@ -14,8 +15,9 @@ class StatusesController < ApplicationController
   end
 
   def destroy
+    store_location
     @status.destroy
-    redirect_to root_url
+    redirect_back_or current_user
   end
 
   private

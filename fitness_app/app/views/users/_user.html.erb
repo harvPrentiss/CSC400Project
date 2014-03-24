@@ -1,8 +1,8 @@
-<li>
+<li class="buddy">
   <!-- Profile image -->
-  <%= link_to user.displayName, user %>
+  <%= link_to user.displayName, user, class:"followStats smallerFont" %>
   <% if current_user.admin? && !current_user?(user) %>
-    | <%= link_to "delete", user, method: :delete,
+    <%= link_to "delete", user, class:"followStats deleteLink right", method: :delete,
                                   data: { confirm: "You sure?" } %>
   <% end %>
 </li>

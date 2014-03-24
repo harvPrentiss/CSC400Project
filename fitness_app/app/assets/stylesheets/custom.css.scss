@@ -6,6 +6,7 @@ $greenThemeColorHighlight: hsl(118, 96%, 69%);
 $textFieldBackColor: hsl(0, 0%, 10%);
 $statusSeperatorColor: hsl(0, 0%, 25%);
 $redWarningColor: hsl(0, 96%, 39%);
+$alertBackground: hsl(118, 20%, 75%);
 
 html
 {
@@ -105,8 +106,8 @@ header{
 
 .alert{
 	color: $redWarningColor;
-	background-color: $textFieldBackColor;
-	border: 1px solid $textFieldBackColor;
+	background-color: $alertBackground;
+	border: 1px solid $alertBackground;
 	border-radius: 10px;
 	padding-left: 10px;
 }
@@ -137,17 +138,19 @@ header{
 	box-sizing: border-box;
 	float: left;
 	width: 75%;
-	margin: 30px 0 10px 10px;
+	margin: 30px 5px 10px 10px;
 }
 
 .middleContent{
 	@extend .mainContent;
-	width: 65%;
+	width: 60%;
 }
 
 .rightContent{
 	@extend .leftContent;
-	width: 10%;
+	width: 15%;
+	padding: 10px;
+	margin-top: 30px;
 }
 
 .characterCount{
@@ -158,6 +161,50 @@ header{
 
 .redWarning{
 	color: $redWarningColor;
+}
+
+.usersList{
+	width: 50%;
+	margin: 0 auto;
+	overflow: hidden;
+	background-color: $textFieldBackColor;
+	color: $mainTextColor;
+	padding: 0;
+	border-radius: 10px;
+	margin-bottom: 2px;
+}
+
+.buddyList{
+	overflow: hidden;
+	background-color: $textFieldBackColor;
+	color: $mainTextColor;
+	padding: 0;
+	border-radius: 10px;
+	margin-bottom: 2px;
+}
+
+.pagination{
+	overflow: hidden;
+	background-color: $textFieldBackColor;
+	margin: 0 auto;
+	ul{
+		list-style: none;
+		li{
+			display: inline;
+			margin: 0 5px;
+			a{
+				text-decoration: none;
+				padding: 5px;
+				color: $greenThemeColor;
+				&:hover{
+					color: $greenThemeColorHighlight;
+				}
+			}
+		}
+		li.active{
+			background-color: $mainTextColor;
+		}
+	}
 }
 
 main{
@@ -255,8 +302,11 @@ main{
 	margin-right: 20px;
 	color: $greenThemeColor;
 	z-index: 99;
+	text-indent: -9999px;
+	background: url(pulseIconSprite.png) no-repeat;
 	&:hover{
 		color: $greenThemeColorHighlight;
+		background-position: 0 -60px;
 	}
 }
 
@@ -323,7 +373,7 @@ main{
 	background-color: $textFieldBackColor;
 	color: $mainTextColor;
 	padding: 0;
-	border-radius: 5px;
+	border-radius: 10px;
 	margin-bottom: 2px;
 }
 
@@ -333,6 +383,14 @@ main{
 	border-top: 1px solid $statusSeperatorColor;
 	overflow: hidden;
 }
+
+.buddy{
+	@extend .status;
+	padding: 10px 10px;	
+	border-top: 1px solid $statusSeperatorColor;
+}
+
+
 
 .statusContent{
 	float: left;
@@ -352,7 +410,6 @@ main{
 }
 
 .deleteLink{
-	float:left;
 	width: 29px;
 	height: 25px;
 	background: url(deleteIconSprite.png) no-repeat;
@@ -368,6 +425,9 @@ main{
 
 .noColor{
 	color: $mainTextColor;
+	&:hover{
+		color: $mainTextColor;
+	}
 }
 
 
@@ -464,4 +524,13 @@ main{
     -moz-transform: perspective(1000px) rotateY(180deg);
     transform: perspective(1000px) rotateY(180deg);
     font-size: 14pt;
+}
+
+
+.left{
+	float: left;
+}
+
+.right{
+	float: right;
 }
