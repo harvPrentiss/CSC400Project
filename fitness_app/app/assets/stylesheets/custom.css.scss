@@ -105,6 +105,10 @@ header{
 
 .alert{
 	color: $redWarningColor;
+	background-color: $textFieldBackColor;
+	border: 1px solid $textFieldBackColor;
+	border-radius: 10px;
+	padding-left: 10px;
 }
 
 .statusPostBox{
@@ -126,7 +130,6 @@ header{
 	box-sizing: border-box;
 	float: left;
 	width: 20%;
-	box-sizing: border-box;
 	margin: 5px 5px 10px 0px;
 }
 
@@ -134,8 +137,17 @@ header{
 	box-sizing: border-box;
 	float: left;
 	width: 75%;
-	box-sizing: border-box;
 	margin: 30px 0 10px 10px;
+}
+
+.middleContent{
+	@extend .mainContent;
+	width: 65%;
+}
+
+.rightContent{
+	@extend .leftContent;
+	width: 10%;
 }
 
 .characterCount{
@@ -243,9 +255,9 @@ main{
 	margin-right: 20px;
 	color: $greenThemeColor;
 	z-index: 99;
-}
-.title:hover{
-	color: $greenThemeColorHighlight;
+	&:hover{
+		color: $greenThemeColorHighlight;
+	}
 }
 
 .nav-mobile 
@@ -272,11 +284,10 @@ main{
 	font-size: 14pt;
 	color: $greenThemeColor;
 	z-index: 10;
-}
-
-.navItem:hover{
-	background-color: #272822;
-	color: $greenThemeColorHighlight;
+	&:hover{
+		background-color: #272822;
+		color: $greenThemeColorHighlight;
+	}
 }
 
 .excerciseLinks{
@@ -324,20 +335,18 @@ main{
 }
 
 .statusContent{
-	display: inline-block;
 	float: left;
-	width: 75%;
+	width: 70%;
 }
 
 .statusTimestamp{
-	display: inline-block;
+	box-sizing: border-box;
 	float: left;
 	width: 15%;
-	font-size: 12pt;
+	margin: 0 10px;
 }
 
 .statusUser{
-	display: inline-block;
 	width: 5%;
 	float: left;
 }
@@ -351,6 +360,14 @@ main{
 	&:hover{
 		background-position: 0 -25px;
 	}
+}
+
+.smallerFont{
+	font-size: 12pt;
+}
+
+.noColor{
+	color: $mainTextColor;
 }
 
 

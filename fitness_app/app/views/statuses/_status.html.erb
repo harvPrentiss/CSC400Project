@@ -1,7 +1,13 @@
-<li>
-	<span class="statusContent"><%= status.content %></span>
-	<span class="timeStamp">Posted <%= time_ago_in_words(status.created_at) %> ago.</span>
-	<% if current_user?(status.user) %>
-		<%= link_to "Delete", status, method: :delete, data: {confirm:"You sure?"}, title: status.content %>
-	<% end %>
+
+
+<li id="<%= status.id %>">
+  <div class="status">
+    <div class="statusContent"><%= status.content %></div>
+    <!-- need profile image here -->
+    <div class="statusUser"><%= link_to status.user.displayName, status.user, class:"followStats smallerFont" %></div>
+    <div class="statusTimestamp"><span class='followStats smallerFont noColor'><%= time_ago(status.created_at) %> ago</span></div>
+    <% if current_user?(status.user) %>
+       <%= link_to "Delete", status, method: :delete, data: {confirm:"You sure?"}, title: status.content, class:"followStats deleteLink" %>
+    <% end %>
+  </div>
 </li>
