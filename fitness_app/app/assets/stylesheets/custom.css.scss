@@ -4,6 +4,8 @@ $mainTextColor: hsl(0, 0%, 75%);
 $greenThemeColor: hsl(118, 96%, 39%);
 $greenThemeColorHighlight: hsl(118, 96%, 69%);
 $textFieldBackColor: hsl(0, 0%, 10%);
+$statusSeperatorColor: hsl(0, 0%, 25%);
+$redWarningColor: hsl(0, 96%, 39%);
 
 html
 {
@@ -102,7 +104,48 @@ header{
 }
 
 .alert{
-	color: $greenThemeColor;
+	color: $redWarningColor;
+}
+
+.statusPostBox{
+	background-color: $textFieldBackColor;
+	color: $mainTextColor;
+	border: 1px solid $textFieldBackColor;
+	border-radius: 10px;
+	padding: 3px;
+	min-width: 200px;
+	min-height: 100px;
+	resize: none;
+	&:focus{
+		outline: 0;
+		border-color: $greenThemeColor;
+	}
+}
+
+.leftContent{
+	box-sizing: border-box;
+	float: left;
+	width: 20%;
+	box-sizing: border-box;
+	margin: 5px 5px 10px 0px;
+}
+
+.mainContent{
+	box-sizing: border-box;
+	float: left;
+	width: 75%;
+	box-sizing: border-box;
+	margin: 30px 0 10px 10px;
+}
+
+.characterCount{
+	font-size: 12pt;
+	margin: 0 0 0 5px;
+	padding: 0;
+}
+
+.redWarning{
+	color: $redWarningColor;
 }
 
 main{
@@ -263,26 +306,51 @@ main{
 	margin: 0;
 }
 
-.statuses
+.statusList
 {
 	overflow: hidden;
-	background-color: rgba(10, 10, 10, 0.5);
-	color: rgba(182, 182, 182, 1);
-	padding: 10px 5px 10px 10px;
-	border: 1px solid black;
+	background-color: $textFieldBackColor;
+	color: $mainTextColor;
+	padding: 0;
 	border-radius: 5px;
 	margin-bottom: 2px;
 }
 
-.content{
-	float: left;
-	width: 80%;
+.status{
+	padding: 15px 10px;
+	font-size: 14pt;
+	border-top: 1px solid $statusSeperatorColor;
+	overflow: hidden;
 }
 
-.time{
-	float:right;
-	width: 10%;
-	font-size: 10pt;
+.statusContent{
+	display: inline-block;
+	float: left;
+	width: 75%;
+}
+
+.statusTimestamp{
+	display: inline-block;
+	float: left;
+	width: 15%;
+	font-size: 12pt;
+}
+
+.statusUser{
+	display: inline-block;
+	width: 5%;
+	float: left;
+}
+
+.deleteLink{
+	float:left;
+	width: 29px;
+	height: 25px;
+	background: url(deleteIconSprite.png) no-repeat;
+	text-indent: -9999px;
+	&:hover{
+		background-position: 0 -25px;
+	}
 }
 
 

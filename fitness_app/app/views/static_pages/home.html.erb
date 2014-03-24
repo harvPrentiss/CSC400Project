@@ -1,6 +1,5 @@
 <% if signed_in? %>
-  <div >
-    <aside>
+    <aside class="leftContent">
       <section>
         <%= render 'shared/user_info' %>
       </section>
@@ -10,11 +9,9 @@
         <%= render 'shared/status_form' %>
       </section>
     </aside>
-    <main>
-    	<h3>Status Feed</h3>
+    <aside class="mainContent">
     	<%= render 'shared/feed' %>
-    </main>
-  </div>
+    </aside>
 <% else %>
   <div class="titleBlock">
     <h1>Welcome to Pulse Fitness</h1>
