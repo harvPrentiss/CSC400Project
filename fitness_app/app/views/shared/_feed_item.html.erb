@@ -1,11 +1,15 @@
 <li id="<%= feed_item.id %>">
   <div class="status">
+
+  	<div class="statusInfo">
+  		<!-- need profile image here -->
+		<%= link_to feed_item.user.displayName, feed_item.user, class:"followStats smallerFont left" %>
+  		<span class='followStats smallerFont noColor left' style="margin-left: 5px;"><%= time_ago(feed_item.created_at) %> ago</span>
+		<% if current_user?(feed_item.user) %>
+       		<%= link_to "Delete", feed_item, method: :delete, data: {confirm:"You sure?"}, title: feed_item.content, class:"followStats deleteLink right" %>
+    	<% end %>
+	</div>
+
     <div class="statusContent"><%= feed_item.content %></div>
-    <!-- need profile image here -->
-    <div class="statusUser"><%= link_to feed_item.user.displayName, feed_item.user, class:"followStats smallerFont" %></div>
-    <div class="statusTimestamp"><span class='followStats smallerFont noColor'><%= time_ago(feed_item.created_at) %> ago</span></div>
-    <% if current_user?(feed_item.user) %>
-       <%= link_to "Delete", feed_item, method: :delete, data: {confirm:"You sure?"}, title: feed_item.content, class:"followStats deleteLink left" %>
-    <% end %>
   </div>
 </li>

@@ -24,7 +24,7 @@
 <section class="middleContent">
 		<ol class="statusList">
 			<% if @user.statuses.any? %>
-				<li><h1 class="userName" style="margin-left: 5px;">Whats going on</h1></li>
+				<li><h1 class="userName headingFont" style="margin-left: 5px;">Whats going on</h1></li>
 				<%= render @statuses %>
 			<% else %>
 				<li><h1 class="userName" style="margin-left: 5px;">Nothing going on :(</h1></li>
@@ -37,7 +37,7 @@
 	<section class="rightContent">
 			<ol class="buddyList">
 				<% if @buddies.any? %>
-					<li><h1 class="userName" style="margin-left: 5px;">Buddies</h1></l1>
+					<li><h1 class="userName headingFont" style="margin-left: 5px;">Buddies</h1></l1>
 					<%= render @buddies %>
 				<% else %>
 					<li><h1 class="userName" style="margin-left: 5px">No Buddies :(</h1></li>

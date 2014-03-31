@@ -1,11 +1,14 @@
 <li id="<%= status.id %>">
   <div class="status">
-    <div class="statusContent"><%= status.content %></div>
-    <!-- need profile image here -->
-    <div class="statusUser"><%= link_to status.user.displayName, status.user, class:"followStats smallerFont" %></div>
-    <div class="statusTimestamp"><span class='followStats smallerFont noColor'><%= time_ago(status.created_at) %> ago</span></div>
-    <% if current_user?(status.user) %>
-       <%= link_to "Delete", status, method: :delete, data: {confirm:"You sure?"}, title: status.content, class:"followStats deleteLink left" %>
-    <% end %>
+  	
+  	<div class="statusInfo">    
+	    <!-- need profile image here -->
+	    <%= link_to status.user.displayName, status.user, class:"followStats smallerFont left" %>
+	    <span class='followStats smallerFont noColor left' style="margin-left: 5px;"><%= time_ago(status.created_at) %> ago</span>
+	    <% if current_user?(status.user) %>
+	       <%= link_to "Delete", status, method: :delete, data: {confirm:"You sure?"}, title: status.content, class:"followStats deleteLink right" %>
+	    <% end %>
+	</div>
+	<div class="statusContent"><%= status.content %></div>
   </div>
 </li>

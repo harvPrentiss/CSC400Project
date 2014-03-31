@@ -7,6 +7,7 @@ $textFieldBackColor: hsl(0, 0%, 10%);
 $statusSeperatorColor: hsl(0, 0%, 25%);
 $redWarningColor: hsl(0, 96%, 39%);
 $alertBackground: hsl(118, 20%, 75%);
+$timestampColor: hsl(0, 0%, 45%);
 
 html
 {
@@ -79,6 +80,7 @@ header{
 
 .signUpBtn{
 	box-sizing: border-box;
+	display: inline;
 	border: 1px solid hsl(0, 0%, 5%);
 	border-radius: 10px;
 	color: $greenThemeColor;
@@ -118,6 +120,7 @@ header{
 	border: 1px solid $textFieldBackColor;
 	border-radius: 10px;
 	padding: 3px;
+	width: 100%;
 	min-width: 200px;
 	min-height: 100px;
 	resize: none;
@@ -149,11 +152,11 @@ header{
 .rightContent{
 	@extend .leftContent;
 	width: 15%;
-	padding: 10px;
 	margin-top: 30px;
 }
 
 .characterCount{
+	display: inline;
 	font-size: 12pt;
 	margin: 0 0 0 5px;
 	padding: 0;
@@ -394,18 +397,22 @@ main{
 	border-top: 1px solid $statusSeperatorColor;
 }
 
-
+.statusInfo{
+	width: 100%;
+}
 
 .statusContent{
+	box-sizing: border-box;
 	float: left;
-	width: 70%;
+	width: 100%;
+	padding: 5px 15px;
 }
 
 .statusTimestamp{
 	box-sizing: border-box;
-	float: left;
-	width: 15%;
-	margin: 0 10px;
+	float: right;
+	width: 17%;
+	margin-left: 10px;
 }
 
 .statusUser{
@@ -428,9 +435,9 @@ main{
 }
 
 .noColor{
-	color: $mainTextColor;
+	color: $timestampColor;
 	&:hover{
-		color: $mainTextColor;
+		color: $timestampColor;
 	}
 }
 
@@ -537,4 +544,8 @@ main{
 
 .right{
 	float: right;
+}
+
+.headingFont{
+	font-family: 'Black Ops One', cursive;
 }
