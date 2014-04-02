@@ -30,11 +30,16 @@ header{
 	background-color: black;
 }
 
-.centeredContainer{
-	width: 70%;
-	margin: 0 auto;
-	text-align: center;	
+main{
+	box-sizing: border-box;
+	width: 100%;
+	height: auto;
+	margin-top: 50px;
+	margin-bottom: 50px;
+	padding: 20px 40px;
 }
+
+/* Form Styles */
 
 .formLabel + .formField{
 	width: 30%;
@@ -48,6 +53,7 @@ header{
 .formLabel{
 	width: 30%;
 	text-align:right;
+	color: $greenThemeColor;
 }
 
 .formLabelRadio{
@@ -73,6 +79,10 @@ header{
 .formFieldRadio{
 	width: 10%;
 }
+
+/* end form styles */
+
+
 
 .titleBlock{
 	text-align: center;
@@ -155,17 +165,6 @@ header{
 	margin-top: 30px;
 }
 
-.characterCount{
-	display: inline;
-	font-size: 12pt;
-	margin: 0 0 0 5px;
-	padding: 0;
-}
-
-.redWarning{
-	color: $redWarningColor;
-}
-
 .usersList{
 	width: 50%;
 	margin: 0 auto;
@@ -210,14 +209,7 @@ header{
 	}
 }
 
-main{
-	box-sizing: border-box;
-	width: 100%;
-	height: auto;
-	margin-top: 50px;
-	margin-bottom: 50px;
-	padding: 20px 40px;
-}
+
 
 #tagBox{
 	
@@ -231,69 +223,6 @@ main{
 	color: rgba(182, 182, 182, 1);
 	overflow: hidden;
 	max-height: 100px;
-}
-
-#leftBox{
-	box-sizing: border-box;
-	float: left;
-	width: 25%;
-	background-color: rgba(10, 10, 10, 0.2);
-	padding: 10px;
-}
-
-#middleBox{
-	box-sizing: border-box;
-	float: left;
-	width: 58%;
-	margin: 0px 5px;
-	background-color: rgba(10, 10, 10, 0.2);
-	padding: 10px;
-}
-
-#rightBox{
-	box-sizing: border-box;
-	float: right;
-	width: 15%;
-	background-color: rgba(10, 10, 10, 0.2);
-	padding: 10px;
-}
-
-#stats, #soundtrack, #routines, #buddies{
-	box-sizing: border-box;
-	border: 1px solid black;
-	border-radius: 5px;
-	padding: 2px;
-	margin: 5px;
-	text-align: center;
-	color: rgba(182, 182, 182, 1);
-}
-
-.statsTable{
-	font-size: 14pt;
-	margin: 0px auto;
-	color: rgba(182, 182, 182, 1);
-}
-
-.soundtrackTable{
-	font-size: 10pt;
-	margin: 0px auto;
-	color: rgba(182, 182, 182, 1);
-}
-
-.statsTable td{
-	padding: 5px;
-}
-
-.statHeader{
-	margin: 2px;
-	color: rgba(72, 218, 36, 1);
-	font-size: 16pt;
-}
-
-.boxHeader{
-	text-decoration: none;
-	color: rgba(72, 218, 36, 1);
-	font-size: 16pt;
 }
 
 .title{
@@ -343,33 +272,6 @@ main{
 	}
 }
 
-.excerciseLinks{
-	display: block;
-	color: green;
-	text-decoration: none;
-}
-
-
-.profileImage{
-	float: left;
-	height: 100%;
-	width: 100%;
-	max-height: 100px;
-	max-width: 100px;
-	margin-bottom: 10px;
-}
-
-.statusHeader{
-	background-color: rgba(10, 10, 10, 0.5);
-	color: rgba(72, 218, 36, 1);
-	font-style: italic;
-	padding: 10px 5px 10px 10px;
-	border: 1px 1px 0px 0px solid black;
-	border-radius: 5px 5px 0px 0px;
-	font-size: 16pt;
-	margin: 0;
-}
-
 .statusList
 {
 	overflow: hidden;
@@ -378,10 +280,6 @@ main{
 	padding: 0;
 	border-radius: 10px;
 	margin-bottom: 2px;
-}
-
-.smallerList{
-	width: 50%;
 }
 
 .status{
@@ -429,18 +327,6 @@ main{
 		background-position: 0 -25px;
 	}
 }
-
-.smallerFont{
-	font-size: 12pt;
-}
-
-.noColor{
-	color: $timestampColor;
-	&:hover{
-		color: $timestampColor;
-	}
-}
-
 
 /* Profile card CSS */
 /* entire container, keeps perspective */
@@ -538,6 +424,8 @@ main{
 }
 
 
+/* Some generic and one off styles */
+
 .left{
 	float: left;
 }
@@ -549,3 +437,37 @@ main{
 .headingFont{
 	font-family: 'Black Ops One', cursive;
 }
+
+.centeredContainer{
+	width: 70%;
+	margin: 0 auto;
+	text-align: center;	
+}
+
+.characterCount{
+	display: inline;
+	font-size: 12pt;
+	margin: 0 0 0 5px;
+	padding: 0;
+}
+
+.redWarning{
+	color: $redWarningColor;
+}
+
+.smallerList{
+	width: 50%;
+}
+
+.smallerFont{
+	font-size: 12pt;
+}
+
+.noColor{
+	color: $timestampColor;
+	&:hover{
+		color: $timestampColor;
+	}
+}
+
+/* end generics */

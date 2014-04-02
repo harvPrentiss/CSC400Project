@@ -1,26 +1,26 @@
 <% provide(:title, "Edit user") %>
   <div class="centeredContainer">
-  	<h1>Update Your Profile</h1>
+  	<h1 class="userName headingFont">Update Your Profile</h1>
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
 
-      <%= f.label :displayName, "Display Name", class:"formLabel" %>
+      <%= f.label :displayName, "Display Name", class:"formLabel headingFont" %>
       <%= f.text_field :displayName, class:"formField" %>
       <br>
       <br>
-      <%= f.label :emailAdd, "Email", class:"formLabel" %>
+      <%= f.label :emailAdd, "Email", class:"formLabel headingFont" %>
       <%= f.text_field :emailAdd, class:"formField" %>
       <br>
       <br>
-      <%= f.label :password, class:"formLabel" %>
+      <%= f.label :password, class:"formLabel headingFont" %>
       <%= f.password_field :password, class:"formField" %>
       <br>
       <br>
-      <%= f.label :password_confirmation, "Confirm Password", class:"formLabel" %>
+      <%= f.label :password_confirmation, "Confirm Password", class:"formLabel headingFont" %>
       <%= f.password_field :password_confirmation, class:"formField" %>
       <br>
       <br>
-      <%= f.label :profileImgURL, "Profile Image URL", class:"formLabel" %>
+      <%= f.label :profileImgURL, "Profile Image URL", class:"formLabel headingFont" %>
       <%= f.text_field :profileImgURL, class:"formField" %>
       <br>
       <br>
@@ -28,62 +28,62 @@
 
      
 
-	   <%= f.label :heightM, "Height", class:"formLabel" %>
+	   <%= f.label :heightM, "Height", class:"formLabel headingFont" %>
 	   <%= f.text_field :heightM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :weightM, "Weight", class:"formLabel" %>
+	   <%= f.label :weightM, "Weight", class:"formLabel headingFont" %>
 	   <%= f.text_field :weightM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :bodyFatM, "Body Fat %", class:"formLabel" %>
+	   <%= f.label :bodyFatM, "Body Fat %", class:"formLabel headingFont" %>
 	   <%= f.text_field :bodyFatM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :shouldersM, "Shoulders", class:"formLabel" %>
+	   <%= f.label :shouldersM, "Shoulders", class:"formLabel headingFont" %>
 	   <%= f.text_field :shouldersM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :neckM, "Neck", class:"formLabel" %>
+	   <%= f.label :neckM, "Neck", class:"formLabel headingFont" %>
 	   <%= f.text_field :neckM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :armsM, "Arms", class:"formLabel" %>
+	   <%= f.label :armsM, "Arms", class:"formLabel headingFont" %>
 	   <%= f.text_field :armsM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :forearmsM, "Forearms", class:"formLabel" %>
+	   <%= f.label :forearmsM, "Forearms", class:"formLabel headingFont" %>
 	   <%= f.text_field :forearmsM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :waistM, "Waist", class:"formLabel" %>
+	   <%= f.label :waistM, "Waist", class:"formLabel headingFont" %>
 	   <%= f.text_field :waistM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :chestM, "Chest", class:"formLabel" %>
+	   <%= f.label :chestM, "Chest", class:"formLabel headingFont" %>
 	   <%= f.text_field :chestM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :thighsM, "Thighs", class:"formLabel" %>
+	   <%= f.label :thighsM, "Thighs", class:"formLabel headingFont" %>
 	   <%= f.text_field :thighsM, class:"formField" %>
 	   <br>
        <br>
-	   <%= f.label :calvesM, "Calves", class:"formLabel" %>
+	   <%= f.label :calvesM, "Calves", class:"formLabel headingFont" %>
 	   <%= f.text_field :calvesM, class:"formField" %>
 
 	  <br>
 	  <br>
 	  <br>
 
-      <%= f.label :hideStats, "Hide Stats", class:"formLabelRadio" %>
+      <%= f.label :hideStats, "Hide Stats", class:"formLabelRadio headingFont" %>
       <%= f.check_box :hideStats, class:"formFieldRadio" %>
       <br>
       <br>
-      <%= f.label :hideRoutines, "Hide Routines", class:"formLabelRadio" %>
+      <%= f.label :hideRoutines, "Hide Routines", class:"formLabelRadio headingFont" %>
       <%= f.check_box :hideRoutines, class:"formFieldRadio" %>
       <br>
       <br>
-      <%= f.label :hideSoundtrack, "Hide Sountrack", class:"formLabelRadio" %>
+      <%= f.label :hideSoundtrack, "Hide Sountrack", class:"formLabelRadio headingFont" %>
       <%= f.check_box :hideSoundtrack, class:"formFieldRadio"  %>
       <br>
       <br>

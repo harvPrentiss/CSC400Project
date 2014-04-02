@@ -1,9 +1,18 @@
 <% provide(:title, @user.displayName) %>
 <aside class="leftContent">
-	<% if @user.profileImgURL.to_s != '' && @user.profileImgURL  %>
-		<%= image_tag(@user.profileImgURL, alt:@user.displayName) %>
-	<% end %>
 	<h1 class="userName"><%= @user.displayName %><h1>
+	<!-- profile card -->
+	<div class="profileCardMain">
+		<div class="profileCardFront">
+			<% if @user.profileImgURL.to_s != '' && @user.profileImgURL  %>
+				<%= image_tag(@user.profileImgURL, alt:@user.displayName) %>
+			<% else %>
+				Default
+			<% end %>
+		</div>
+		<div class="profileCardBack">
+
+		</div>
 	<% unless @user.hideStats %>
 		<h2 class="stats">Height: <%= @user.heightM %></h2>
 		<h2 class="stats">Weight: <%= @user.weightM %></h2>
