@@ -28,6 +28,7 @@ header{
 	top: 0;
 	width: 100%;
 	background-color: black;
+	z-index: 100;
 }
 
 main{
@@ -116,6 +117,10 @@ main{
 	}
 }
 
+.stats{
+	margin-top: 10px;
+}
+
 .alert{
 	color: $redWarningColor;
 	background-color: $alertBackground;
@@ -144,14 +149,14 @@ main{
 	box-sizing: border-box;
 	float: left;
 	width: 20%;
-	margin: 5px 5px 10px 0px;
+	margin: 20px 15px 10px 0px;
 }
 
 .mainContent{
 	box-sizing: border-box;
 	float: left;
 	width: 75%;
-	margin: 30px 5px 10px 10px;
+	margin: 20px 5px 10px 10px;
 }
 
 .middleContent{
@@ -162,7 +167,7 @@ main{
 .rightContent{
 	@extend .leftContent;
 	width: 15%;
-	margin-top: 30px;
+	margin-top: 20px;
 }
 
 .usersList{
@@ -339,10 +344,10 @@ main{
     margin: 0px auto;
 }
 
-.flip-container, .front, .back 
+.flip-container, .profileCardFront, .profileCardBack 
 {
-    width: 275px;
-	height: 375px;
+    width: 250px;
+	height: 350px;
     -o-transition: 0.5s linear .5s;
     -webkit-transition: 0.5s linear .5s;
     transition: 0.5s linear .5s;
@@ -352,7 +357,7 @@ main{
 }
 
 /* flip the pane when hovered */
-.flip-container:hover .front, .flip-container.hover .front 
+.flip-container:hover .profileCardFront, .flip-container.hover .profileCardFront 
 {
     -o-transform: perspective(1000px) rotateY(-180deg);
     -webkit-transform: perspective(1000px) rotateY(-180deg);
@@ -360,7 +365,7 @@ main{
     transform: perspective(1000px) rotateY(-180deg);
 }
 
-.flip-container:hover .back, .flip-container.hover .back
+.flip-container:hover .profileCardBack, .flip-container.hover .profileCardBack
 {
     -o-transform: perspective(1000px) rotateY(0deg);
     -webkit-transform: perspective(1000px) rotateY(0deg);
@@ -368,59 +373,89 @@ main{
     transform: perspective(1000px) rotateY(0deg);
 }
 
-/* flip speed goes here */
-.flipper 
-{    
-    -o-transform: perspective(1000px);
+.profileCardMain{
+	width: 250px;
+	height: 350px;
+
+	-o-transform: perspective(1000px);
     -webkit-transform: perspective(1000px);
     -moz-transform: perspective(1000px);
     transform: perspective(1000px);
 
-    width: 275px;
-	height: 375px;
-
     position: relative;
 }
 
-.flipperButton{
-	position: fixed;
-	top: 0;
-	right: 0;
-	background: gray;
-	width: 5px;
-	height: 5px;
-	border-top: 2px solid gray;
-	border-right: 2px solid gray;
-}
-
-/* hide back of pane during swap */
-.front, .back 
-{
-    -webkit-backface-visibility: hidden;
+.profileCardFront, .profileCardBack{
+	-webkit-backface-visibility: hidden;
     backface-visibility: hidden;
-
     position: absolute;
     top: 0;
     left: 0;
-    background: rgb(10, 10, 10);
-    height: 100%;
-    border: 3px solid purple;
+	box-sizing: border-box;
+	width: 100%;
+	background: $textFieldBackColor;
+	border: 5px inset $greenThemeColor;
 }
 
-/* front pane, placed above back */
-.front 
-{
-    z-index: 2;
+.profileCardFront{
+	z-index: 2;
 }
 
-/* back, initially hidden pane */
-.back 
-{
-    -o-transform: perspective(1000px) rotateY(180deg);
+.profileCardBack{
+	-o-transform: perspective(1000px) rotateY(180deg);
     -webkit-transform: perspective(1000px) rotateY(180deg);
     -moz-transform: perspective(1000px) rotateY(180deg);
     transform: perspective(1000px) rotateY(180deg);
-    font-size: 14pt;
+}
+
+.profileCardImageContainer{
+	height: 310px;
+	width: auto;
+	background: black;
+}
+
+.profileCardImage{
+	width: 100%;
+	margin: 0 auto;
+	text-align: center;
+}
+
+.profileCardUserName{
+	height: 25px;
+	text-align: center;
+	font-size: 14pt;
+	color: $greenThemeColor;
+	padding: 0;
+	margin: 0;
+}
+
+.profileCardBackContainer{
+	width: 100%;
+	margin: 0 auto;
+}
+
+.profileCardBackList{
+	list-style: none;
+	width: 100%;
+	font-size: 0;
+	padding: 0;
+	white-space: nowrap;
+}
+
+.profileCardBackListItem{
+	box-sizing: border-box;
+	display: inline-block;
+	width: 30%;
+	list-style-type: none;
+	background-color: black;
+	text-align: center;
+	padding: 5px;
+	margin: 0;
+	font-size: 14pt;
+	border-right: 1px solid $mainTextColor;
+	&:hover{
+		background-color: #272822;
+	}
 }
 
 
@@ -468,6 +503,10 @@ main{
 	&:hover{
 		color: $timestampColor;
 	}
+}
+
+.noRightBorder{
+	border-right: none;
 }
 
 /* end generics */

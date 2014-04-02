@@ -1,23 +1,29 @@
 <% provide(:title, @user.displayName) %>
 <aside class="leftContent">
-	<h1 class="userName"><%= @user.displayName %><h1>
 	<!-- profile card -->
-	<div class="profileCardMain">
-		<div class="profileCardFront">
-			<% if @user.profileImgURL.to_s != '' && @user.profileImgURL  %>
-				<%= image_tag(@user.profileImgURL, alt:@user.displayName) %>
-			<% else %>
-				Default
-			<% end %>
+	<div class="flip-container">
+		<div class="profileCardMain">
+			<div class="profileCardFront">
+				<div class="profileCardImageContainer">
+					<% if @user.profileImgURL.to_s != '' && @user.profileImgURL  %>
+						<%= image_tag(@user.profileImgURL, alt:@user.displayName, class:"profileCardImage") %>
+					<% else %>
+						Default
+					<% end %>
+				</div>
+				<h1 class="profileCardUserName"><%= @user.displayName %></h1>
+			</div>
+			<div class="profileCardBack">
+				<div class="profileCardBackContainer">
+					<ul class="profileCardBackList">
+						<li class="profileCardBackListItem" style="width:25%;">Stats</li>
+						<li class="profileCardBackListItem" style="width:40%;">Soundtrack</li>
+						<li class="profileCardBackListItem noRightBorder" style="width:35%;">Routines</li>
+					</ul>
+				</div>
+			</div>
 		</div>
-		<div class="profileCardBack">
-
-		</div>
-	<% unless @user.hideStats %>
-		<h2 class="stats">Height: <%= @user.heightM %></h2>
-		<h2 class="stats">Weight: <%= @user.weightM %></h2>
-		<h2 class="stats">Body Fat: <%= @user.bodyFatM %>%</h2>
-	<% end %>
+	</div>
 	<section>
 		<%= render 'shared/stats' %>
 	</section>
