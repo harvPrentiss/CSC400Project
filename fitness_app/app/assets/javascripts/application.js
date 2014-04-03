@@ -27,6 +27,21 @@ ready = function(){
 		}
 	})
 
+	$('.profileCardBackListItem').on('click', function(){
+		$('.cardBackContent').addClass('hidden');
+		$('.profileCardBackListItem').removeClass('addTextFieldColor');
+		$(this).addClass('addTextFieldColor');
+		if($(this).text() == "Stats"){
+			$('#Stats').removeClass('hidden');
+		}
+		else if($(this).text() == "Soundtrack"){
+			$('#Soundtrack').removeClass('hidden');
+		}
+		else if($(this).text() == "Routines"){
+			$('#Routines').removeClass('hidden');
+		}
+	})
+
 }
 
 $(document).ready(ready);

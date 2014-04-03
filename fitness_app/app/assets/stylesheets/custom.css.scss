@@ -458,6 +458,51 @@ main{
 	}
 }
 
+.privateInfoMessage{
+	@extend .profileCardBackListItem;
+	display: block;
+	width: 100%;
+	border: none;
+	white-space: wrap;
+	&:hover{
+		background-color: black;
+	}
+}
+
+.cardBackContent{
+	width: 100%;
+	overflow-y: auto;
+	font-size: 14pt;
+	padding: 5px;
+}
+
+.statList{
+	width: 100%;
+	list-style: none;
+}
+
+.leftList{
+	float: left;
+	color: $mainTextColor;
+	text-align: right;
+	width: 46%;	
+}
+
+.rightList{
+	float: right;
+	color: $mainTextColor;
+	text-align: left;
+	width: 46%;
+}
+
+.soundtrackHeader{
+	text-align: center;
+	color: $greenThemeColor;
+	font-size: 14pt;
+	margin: 5px 0;
+	padding: 0;
+}
+
 
 /* Some generic and one off styles */
 
@@ -507,6 +552,14 @@ main{
 
 .noRightBorder{
 	border-right: none;
+}
+
+.hidden{
+	display: none;
+}
+
+.addTextFieldColor{
+	background-color: $textFieldBackColor;
 }
 
 /* end generics */
