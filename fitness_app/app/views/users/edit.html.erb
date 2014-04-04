@@ -1,8 +1,10 @@
 <% provide(:title, "Edit user") %>
-  <div class="centeredContainer">
-  	<h1 class="userName headingFont">Update Your Profile</h1>
+  <h1 class="userName headingFont centered">Update Your Profile</h1>
+  <div class="leftContainer">
     <%= form_for(@user) do |f| %>
       <%= render 'shared/error_messages', object: f.object %>
+
+      <h1 class="userName headingFont centered">Account Info</h1>
 
       <%= f.label :displayName, "Display Name", class:"formLabel headingFont" %>
       <%= f.text_field :displayName, class:"formField" %>
@@ -26,7 +28,7 @@
       <br>
       <br>
 
-     
+     <h1 class="userName headingFont centered">Personal Stats</h1>
 
 	   <%= f.label :heightM, "Height", class:"formLabel headingFont" %>
 	   <%= f.text_field :heightM, class:"formField" %>
@@ -71,20 +73,63 @@
 	   <%= f.label :calvesM, "Calves", class:"formLabel headingFont" %>
 	   <%= f.text_field :calvesM, class:"formField" %>
 
-	  <br>
-	  <br>
-	  <br>
+	  </div>
+    <div class="rightContainer">
+      <h1 class="userName headingFont centered">Soundtrack</h1>
+      <div class="leftContainer noTopMargin">
+        <%= f.label :song1, "Title", class:"formLabel headingFont" %>
+        <%= f.text_field :song1, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :song2, "Title", class:"formLabel headingFont" %>
+        <%= f.text_field :song2, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :song3, "Title", class:"formLabel headingFont" %>
+        <%= f.text_field :song3, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :song4, "Title", class:"formLabel headingFont" %>
+        <%= f.text_field :song4, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :song5, "Title", class:"formLabel headingFont" %>
+        <%= f.text_field :song5, class:"formField" %>
+      </div>
+      <div class="rightContainer noTopMargin">
+        <%= f.label :artist1, "Artist", class:"formLabel headingFont" %>
+        <%= f.text_field :artist1, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :artist2, "Artist", class:"formLabel headingFont" %>
+        <%= f.text_field :artist2, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :artist3, "Artist", class:"formLabel headingFont" %>
+        <%= f.text_field :artist3, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :artist4, "Artist", class:"formLabel headingFont" %>
+        <%= f.text_field :artist4, class:"formField" %>
+        <br>
+        <br>
+        <%= f.label :artist5, "Artist", class:"formLabel headingFont" %>
+        <%= f.text_field :artist5, class:"formField" %>
+      </div>
 
-      <%= f.label :hideStats, "Hide Stats", class:"formLabelRadio headingFont" %>
-      <%= f.check_box :hideStats, class:"formFieldRadio" %>
-      <br>
-      <br>
-      <%= f.label :hideRoutines, "Hide Routines", class:"formLabelRadio headingFont" %>
-      <%= f.check_box :hideRoutines, class:"formFieldRadio" %>
-      <br>
-      <br>
-      <%= f.label :hideSoundtrack, "Hide Sountrack", class:"formLabelRadio headingFont" %>
-      <%= f.check_box :hideSoundtrack, class:"formFieldRadio"  %>
+      <div class="optionsBox">
+        <h1 class="userName headingFont centered">Options</h1>
+        <%= f.label :hideStats, "Hide Stats", class:"formLabelRadio headingFont" %>
+        <%= f.check_box :hideStats, class:"formFieldRadio" %>
+        <br>
+        <br>
+        <%= f.label :hideRoutines, "Hide Routines", class:"formLabelRadio headingFont" %>
+        <%= f.check_box :hideRoutines, class:"formFieldRadio" %>
+        <br>
+        <br>
+        <%= f.label :hideSoundtrack, "Hide Sountrack", class:"formLabelRadio headingFont" %>
+        <%= f.check_box :hideSoundtrack, class:"formFieldRadio"  %>
+      </div>
       <br>
       <br>
       <%= f.submit "Save changes", class: "signUpBtn" %>

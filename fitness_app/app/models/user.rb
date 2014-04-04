@@ -19,6 +19,18 @@ class User < ActiveRecord::Base
 	validates :password, presence: true, length: {minimum: 6}, on: :create
 	validates :password, presence: true, length: {minimum: 6}, on: :update, unless: Proc.new{ |user| user.password.blank?}
 
+	validates :song1, length: {maximum: 15}
+	validates :song2, length: {maximum: 15}
+	validates :song3, length: {maximum: 15}
+	validates :song4, length: {maximum: 15}
+	validates :song5, length: {maximum: 15}
+
+	validates :artist1, length: {maximum: 15}
+	validates :artist2, length: {maximum: 15}
+	validates :artist3, length: {maximum: 15}
+	validates :artist4, length: {maximum: 15}
+	validates :artist5, length: {maximum: 15}
+
 	def User.new_remember_token
 		SecureRandom.urlsafe_base64
 	end

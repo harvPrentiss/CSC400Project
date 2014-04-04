@@ -68,7 +68,8 @@ class UsersController < ApplicationController
   
   		def user_params
   			params.require(:user).permit(:displayName, :emailAdd, :password, :password_confirmation, :profileImgURL, :heightM, :weightM, :bodyFatM, :armsM,
-  				:forearmsM, :waistM, :chestM, :thighsM, :calvesM, :shouldersM, :neckM, :hideStats, :hideRoutines, :hideSoundtrack)
+  				:forearmsM, :waistM, :chestM, :thighsM, :calvesM, :shouldersM, :neckM, :hideStats, :hideRoutines, :hideSoundtrack, :song1, :song2, :song3,
+  				:song4, :song5, :artist1, :artist2, :artist3, :artist4, :artist5)
   		end
 
   		def correct_user

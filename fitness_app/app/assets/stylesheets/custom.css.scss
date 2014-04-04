@@ -59,7 +59,8 @@ main{
 
 .formLabelRadio{
 	@extend .formLabel;
-	width: 15%;
+	width: 30%;
+	margin-left: -10px;
 }
 
 .formField{
@@ -524,6 +525,27 @@ main{
 	text-align: center;	
 }
 
+.centered{
+	text-align: center;
+	margin: 0 auto;
+}
+
+.leftContainer{
+	width: 48%;
+	margin: 0 auto;
+	text-align: center;
+	float: left;
+	margin: 20px 0;
+}
+
+.rightContainer{
+	width: 48%;
+	margin: 0 auto;
+	text-align: center;
+	float: right;
+	margin: 20px 0;
+}
+
 .characterCount{
 	display: inline;
 	font-size: 12pt;
@@ -560,6 +582,19 @@ main{
 
 .addTextFieldColor{
 	background-color: $textFieldBackColor;
+}
+
+.inline{
+	display: inline;
+}
+
+.optionsBox{
+	box-sizing: border-box;
+	clear: both;
+}
+
+.noTopMargin{
+	margin-top: 0;
 }
 
 /* end generics */

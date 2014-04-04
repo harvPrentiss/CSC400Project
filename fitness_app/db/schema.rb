@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140321014405) do
+ActiveRecord::Schema.define(version: 20140404024059) do
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -23,6 +23,22 @@ ActiveRecord::Schema.define(version: 20140321014405) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "soundtracks", force: true do |t|
+    t.integer "user_id"
+    t.string  "song1"
+    t.string  "song2"
+    t.string  "song3"
+    t.string  "song4"
+    t.string  "song5"
+    t.string  "artist1"
+    t.string  "artist2"
+    t.string  "artist3"
+    t.string  "artist4"
+    t.string  "artist5"
+  end
+
+  add_index "soundtracks", ["user_id"], name: "index_soundtracks_on_user_id"
 
   create_table "statuses", force: true do |t|
     t.string   "content"
@@ -55,6 +71,16 @@ ActiveRecord::Schema.define(version: 20140321014405) do
     t.string   "password_digest"
     t.string   "remember_token"
     t.boolean  "admin",           default: false
+    t.string   "song1"
+    t.string   "song2"
+    t.string   "song3"
+    t.string   "song4"
+    t.string   "song5"
+    t.string   "artist1"
+    t.string   "artist2"
+    t.string   "artist3"
+    t.string   "artist4"
+    t.string   "artist5"
   end
 
   add_index "users", ["emailAdd"], name: "index_users_on_emailAdd", unique: true
