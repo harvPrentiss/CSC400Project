@@ -77,61 +77,61 @@
     <div class="rightContainer">
       <h1 class="userName headingFont centered">Soundtrack</h1>
       <div class="leftContainer noTopMargin">
-        <%= f.label :song1, "Title", class:"formLabel headingFont" %>
-        <%= f.text_field :song1, class:"formField" %>
+        <%= f.label :song1, "Title", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :song1, class:"formSongEditField", tabIndex:"100" %>
         <br>
         <br>
-        <%= f.label :song2, "Title", class:"formLabel headingFont" %>
-        <%= f.text_field :song2, class:"formField" %>
+        <%= f.label :song2, "Title", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :song2, class:"formSongEditField", tabIndex:"102" %>
         <br>
         <br>
-        <%= f.label :song3, "Title", class:"formLabel headingFont" %>
-        <%= f.text_field :song3, class:"formField" %>
+        <%= f.label :song3, "Title", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :song3, class:"formSongEditField", tabIndex:"104" %>
         <br>
         <br>
-        <%= f.label :song4, "Title", class:"formLabel headingFont" %>
-        <%= f.text_field :song4, class:"formField" %>
+        <%= f.label :song4, "Title", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :song4, class:"formSongEditField", tabIndex:"106" %>
         <br>
         <br>
-        <%= f.label :song5, "Title", class:"formLabel headingFont" %>
-        <%= f.text_field :song5, class:"formField" %>
+        <%= f.label :song5, "Title", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :song5, class:"formSongEditField", tabIndex:"108" %>
       </div>
       <div class="rightContainer noTopMargin">
-        <%= f.label :artist1, "Artist", class:"formLabel headingFont" %>
-        <%= f.text_field :artist1, class:"formField" %>
+        <%= f.label :artist1, "Artist", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :artist1, class:"formSongEditField", tabIndex:"101" %>
         <br>
         <br>
-        <%= f.label :artist2, "Artist", class:"formLabel headingFont" %>
-        <%= f.text_field :artist2, class:"formField" %>
+        <%= f.label :artist2, "Artist", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :artist2, class:"formSongEditField", tabIndex:"103" %>
         <br>
         <br>
-        <%= f.label :artist3, "Artist", class:"formLabel headingFont" %>
-        <%= f.text_field :artist3, class:"formField" %>
+        <%= f.label :artist3, "Artist", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :artist3, class:"formSongEditField", tabIndex:"105" %>
         <br>
         <br>
-        <%= f.label :artist4, "Artist", class:"formLabel headingFont" %>
-        <%= f.text_field :artist4, class:"formField" %>
+        <%= f.label :artist4, "Artist", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :artist4, class:"formSongEditField", tabIndex:"107" %>
         <br>
         <br>
-        <%= f.label :artist5, "Artist", class:"formLabel headingFont" %>
-        <%= f.text_field :artist5, class:"formField" %>
+        <%= f.label :artist5, "Artist", class:"formSongEditLabel headingFont" %>
+        <%= f.text_field :artist5, class:"formSongEditField", tabIndex:"109" %>
       </div>
 
       <div class="optionsBox">
         <h1 class="userName headingFont centered">Options</h1>
         <%= f.label :hideStats, "Hide Stats", class:"formLabelRadio headingFont" %>
-        <%= f.check_box :hideStats, class:"formFieldRadio" %>
+        <%= f.check_box :hideStats, class:"formFieldRadio", tabIndex:"110" %>
         <br>
         <br>
-        <%= f.label :hideRoutines, "Hide Routines", class:"formLabelRadio headingFont" %>
-        <%= f.check_box :hideRoutines, class:"formFieldRadio" %>
+        <%= f.label :hideWorkouts, "Hide Workouts", class:"formLabelRadio headingFont" %>
+        <%= f.check_box :hideWorkouts, class:"formFieldRadio", tabIndex:"111" %>
         <br>
         <br>
         <%= f.label :hideSoundtrack, "Hide Sountrack", class:"formLabelRadio headingFont" %>
-        <%= f.check_box :hideSoundtrack, class:"formFieldRadio"  %>
+        <%= f.check_box :hideSoundtrack, class:"formFieldRadio", tabIndex:"112"  %>
       </div>
       <br>
       <br>
-      <%= f.submit "Save changes", class: "signUpBtn" %>
+      <%= f.submit "Save changes", class: "signUpBtn", tabIndex:"113" %>
     <% end %>
   </div>

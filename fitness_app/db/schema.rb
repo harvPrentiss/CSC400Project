@@ -24,22 +24,6 @@ ActiveRecord::Schema.define(version: 20140404024059) do
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
 
-  create_table "soundtracks", force: true do |t|
-    t.integer "user_id"
-    t.string  "song1"
-    t.string  "song2"
-    t.string  "song3"
-    t.string  "song4"
-    t.string  "song5"
-    t.string  "artist1"
-    t.string  "artist2"
-    t.string  "artist3"
-    t.string  "artist4"
-    t.string  "artist5"
-  end
-
-  add_index "soundtracks", ["user_id"], name: "index_soundtracks_on_user_id"
-
   create_table "statuses", force: true do |t|
     t.string   "content"
     t.integer  "user_id"
@@ -64,7 +48,7 @@ ActiveRecord::Schema.define(version: 20140404024059) do
     t.integer  "shouldersM"
     t.integer  "neckM"
     t.boolean  "hideStats"
-    t.boolean  "hideRoutines"
+    t.boolean  "hideWorkouts"
     t.boolean  "hideSoundtrack"
     t.datetime "created_at"
     t.datetime "updated_at"

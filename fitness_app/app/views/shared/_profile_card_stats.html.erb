@@ -1,18 +1,19 @@
 <ul class="statList">
-	<li class="leftList">Height:</li><li class="rightList"><%= @user.heightM %></li>
-	<li class="leftList">Weight:</li><li class="rightList"><%= @user.weightM %></li>
+	<h1 class="soundtrackHeader">My Stats</h1>
+	<li class="leftList">Height:</li><li class="rightList"><%= @user.heightM ||= 0 %></li>
+	<li class="leftList">Weight:</li><li class="rightList"><%= @user.weightM ||= 0 %></li>
 
-	<li class="leftList">Body Fat %:</li><li class="rightList"><%= @user.bodyFatM %></li>
-	<li class="leftList">Shoulders:</li><li class="rightList"><%= @user.shouldersM %></li>
+	<li class="leftList">Body Fat %:</li><li class="rightList"><%= @user.bodyFatM ||= 0 %></li>
+	<li class="leftList">Shoulders:</li><li class="rightList"><%= @user.shouldersM ||= 0 %></li>
 
-	<li class="leftList">Arms:</li><li class="rightList"><%= @user.armsM %></li>
-	<li class="leftList">Forearms:</li><li class="rightList"><%= @user.forearmsM %></li>
+	<li class="leftList">Arms:</li><li class="rightList"><%= @user.armsM ||= 0 %></li>
+	<li class="leftList">Forearms:</li><li class="rightList"><%= @user.forearmsM ||= 0 %></li>
 
-	<li class="leftList">Neck:</li><li class="rightList"><%= @user.neckM %></li>
-	<li class="leftList">Chest:</li><li class="rightList"><%= @user.chestM %></li>
+	<li class="leftList">Neck:</li><li class="rightList"><%= @user.neckM ||= 0 %></li>
+	<li class="leftList">Chest:</li><li class="rightList"><%= @user.chestM ||= 0 %></li>
 
-	<li class="leftList">Thighs:</li><li class="rightList"><%= @user.thighsM %></li>
-	<li class="leftList">Waist:</li><li class="rightList"><%= @user.waistM %></li>
+	<li class="leftList">Thighs:</li><li class="rightList"><%= @user.thighsM ||= 0 %></li>
+	<li class="leftList">Waist:</li><li class="rightList"><%= @user.waistM ||= 0 %></li>
 
-	<li class="leftList">Calves:</li><li class="rightList"><%= @user.calvesM %></li>
+	<li class="leftList">Calves:</li><li class="rightList"><%= @user.calvesM ||= 0 %></li>
 </ul>

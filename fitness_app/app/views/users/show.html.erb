@@ -16,23 +16,23 @@
 			<div class="profileCardBack">
 				<div class="profileCardBackContainer">
 					<ul class="profileCardBackList">
-						<% unless @user.hideStats && @user.hideSoundtrack && @user.hideRoutines %>
+						<% unless @user.hideStats && @user.hideSoundtrack && @user.hideWorkouts %>
 							<% unless @user.hideStats %>
 								<li class="profileCardBackListItem" style="width:25%;">Stats</li>
 							<% end %>
 							<% unless @user.hideSoundtrack %>
 								<li class="profileCardBackListItem" style="width:40%;">Soundtrack</li>
 							<% end %>
-							<% unless @user.hideRoutines %>
-								<li class="profileCardBackListItem noRightBorder" style="width:35%;">Routines</li>
+							<% unless @user.hideWorkouts %>
+								<li class="profileCardBackListItem noRightBorder" style="width:35%;">Workouts</li>
 							<% end %>
 							<div class="hidden cardBackContent" id="Stats">
 								<%= render 'shared/profile_card_stats' %>
 							</div>
 							<div class="hidden cardBackContent" id="Soundtrack">
-								<h1 class="soundtrackHeader">My Top Workout Songs</h1>
+								<%= render 'shared/profile_card_soundtrack' %>
 							</div>
-							<div class="hidden cardBackContent" id="Routines">
+							<div class="hidden cardBackContent" id="Workouts">
 							</div>
 						<% else %>
 							<li class="privateInfoMessage">Info hidden by the user</li>

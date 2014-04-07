@@ -1,17 +1,17 @@
 <header>
   <div>
     <div>
-      <%= link_to "Pulse Fitness", root_path, class:"title"%>
+      <%= link_to "Pulse Fitness", root_path, class:"title", tabIndex:"1" %>
       <nav class="nav">
         <div class="nav-mobile"></div>
         <ul class="navList">
           <% if signed_in? %>
-            <li><%= link_to "Users", users_path, class:"navItem" %></li>
-            <li><%= link_to "Profile", current_user, class:"navItem" %></li>
-            <li><%= link_to "Settings", edit_user_path(current_user), class:"navItem" %></li>
-            <li><%= link_to "Sign out", signout_path, method: "delete", class:"navItem" %></li>
+            <li><%= link_to "Users", users_path, class:"navItem", tabIndex:"6" %></li>
+            <li><%= link_to "Profile", current_user, class:"navItem", tabIndex:"5" %></li>
+            <li><%= link_to "Settings", edit_user_path(current_user), class:"navItem", tabIndex:"4" %></li>
+            <li><%= link_to "Sign out", signout_path, method: "delete", class:"navItem", tabIndex:"3" %></li>
           <% else %>
-            <li><%= link_to "Sign in", signin_path, class:"navItem" %></li>
+            <li><%= link_to "Sign in", signin_path, class:"navItem", tabIndex:"2" %></li>
           <% end %>
         </ul>
       </nav>

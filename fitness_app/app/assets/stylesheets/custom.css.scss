@@ -82,6 +82,28 @@ main{
 	width: 10%;
 }
 
+.formSongEditLabel{
+	width: 20%;
+	text-align: right;
+	color: $greenThemeColor;
+}
+
+.formSongEditField{
+	width: 70%;
+	min-width: 200px;
+	text-align: left;
+	border: 1px solid $textFieldBackColor;
+	background-color: $textFieldBackColor;
+	border-radius: 10px;
+	color: $mainTextColor;
+	padding-left: 5px;
+	font-size: 14pt;
+	&:focus{
+		outline: 0;
+		border-color: $greenThemeColor;
+	}
+}
+
 /* end form styles */
 
 
@@ -123,9 +145,9 @@ main{
 }
 
 .alert{
-	color: $redWarningColor;
-	background-color: $alertBackground;
-	border: 1px solid $alertBackground;
+	color: $greenThemeColor;
+	background-color: $textFieldBackColor;
+	border: 1px solid $textFieldBackColor;
 	border-radius: 10px;
 	padding-left: 10px;
 }
@@ -504,6 +526,10 @@ main{
 	padding: 0;
 }
 
+.soundtrackItem{
+	font-size: 12pt;
+}
+
 
 /* Some generic and one off styles */
 
@@ -595,6 +621,10 @@ main{
 
 .noTopMargin{
 	margin-top: 0;
+}
+
+.width45{
+	width: 45%;
 }
 
 /* end generics */

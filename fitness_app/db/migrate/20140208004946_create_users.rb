@@ -17,7 +17,7 @@ class CreateUsers < ActiveRecord::Migration
       t.integer :shouldersM
       t.integer :neckM
       t.boolean :hideStats
-      t.boolean :hideRoutines
+      t.boolean :hideWorkouts
       t.boolean :hideSoundtrack
 
       t.timestamps

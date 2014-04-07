@@ -37,10 +37,30 @@ ready = function(){
 		else if($(this).text() == "Soundtrack"){
 			$('#Soundtrack').removeClass('hidden');
 		}
-		else if($(this).text() == "Routines"){
+		else if($(this).text() == "Workouts"){
 			$('#Routines').removeClass('hidden');
 		}
 	})
+
+	var currentPage = 1
+
+	function checkScroll() {
+	  if (nearBottomOfPage()) {
+	    currentPage ++;
+	    $.ajax(window.location.pathname + '.js?page=' + currentPage )
+	    console.log("derp");
+	  } else {
+	    setTimeout("checkScroll()", 250);
+	  }
+	}
+
+	function nearBottomOfPage() {
+	  return scrollDistanceFromBottom() < 150;
+	}
+
+	function scrollDistanceFromBottom(argument) {
+	  return $(document).height() - ($(window).height() + $(window).scrollTop());
+	}
 
 }
 

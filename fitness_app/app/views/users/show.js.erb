@@ -1,0 +1,2 @@
+page.insert_html :bottom, :statuses, :partial => @statuses
+page.call 'checkScroll' if @statuses.total_pages > @statuses.current_page
