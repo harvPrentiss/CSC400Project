@@ -1,2 +1,6 @@
-page.insert_html :bottom, :statuses, :partial => @statuses
-page.call 'checkScroll' if @statuses.total_pages > @statuses.current_page
+$('.statusList').append('<%= j render(@statuses) %>');
+<% if @statuses.next_page %>
+$('.pagination').replaceWith('<%= j will_paginate(@statuses) %>');
+<% else %>
+$('.pagination').remove();
+<% end %>

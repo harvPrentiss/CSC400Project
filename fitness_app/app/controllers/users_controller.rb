@@ -11,8 +11,12 @@ class UsersController < ApplicationController
 	def show
 		@user = User.find(params[:id])
 		@status = current_user.statuses.build
-		@statuses = current_user.feed.paginate(page: params[:page], per_page: 20)
+		@statuses = current_user.feed.paginate(page: params[:page], per_page: 15)
 		@buddies = @user.followed_users
+		respond_to do |format|
+		  format.html
+		  format.js
+		end
 	end
 
 	def new
