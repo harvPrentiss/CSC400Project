@@ -55,15 +55,16 @@
 </aside>
 
 <section class="middleContent">
-		<ol class="statusList">
-			<% if @user.statuses.any? %>
-				<li><h1 class="userName headingFont" style="margin-left: 5px;">Whats going on</h1></li>
-				<%= render @statuses %>
-			<% else %>
-				<li><h1 class="userName" style="margin-left: 5px;">Nothing going on :(</h1></li>
-			<% end %>
-		</ol>
-		<!--<%= will_paginate @statuses %> -->
+	<% if @user.statuses.any? %>
+		<h1 class="userName headingFont statusListHeading">Whats Going On</h1>	
+		<ul class="statusList">
+			<%= render @statuses %>
+		</ul>	
+	<% else %>
+		<h1 class="userName headingFont statusListHeading">Nothing Going On :(</h1>
+	<% end %>
+	
+	<!--<%= will_paginate @statuses %> -->
 </section>
 
 <% if @user == current_user %>

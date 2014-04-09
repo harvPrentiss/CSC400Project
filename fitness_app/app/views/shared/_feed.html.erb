@@ -1,7 +1,9 @@
 <% if @feed_items.any? %>
-	<ol class="statusList">
-		<li><h1 class="userName headingFont" style="margin-left: 5px;">Updates</h1></li>
+	<h1 class="userName headingFont statusListHeading">Whats Going On</h1>	
+	<ul class="statusList">
 		<%= render partial: 'shared/feed_item', collection: @feed_items %>
-	</ol>
-	<%= will_paginate @feed_items %>
+	</ul>	
+<% else %>
+	<h1 class="userName headingFont statusListHeading">Nothing Going On :(</h1>
 <% end %>
+
