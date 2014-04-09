@@ -1,18 +1,78 @@
 <ul class="soundTrackList">
 	<h1 class="soundtrackHeader">My Top 5</h1>
 	<% if @user.song1 != "" && @user.artist1 != "" && @user.song1? && @user.artist1? %>
-		<li class="soundtrackItem">1. <%= @user.song1 %> - <%= @user.artist1 %></li>
+		<li class="soundtrackItem group">
+			<div class="numberBox">
+				#1
+			</div>
+			<div class="soundtrackInfoBox">
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Title: </span><%= @user.song1 %>
+				</div>
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Artist: </span><%= @user.artist1 %>
+				</div>
+			</div>
+		</li>
 	<% end %>
 	<% if @user.song2 != "" && @user.artist2 != "" && @user.song2? && @user.artist2? %>
-		<li class="soundtrackItem">2. <%= @user.song2 %> - <%= @user.artist2 %></li>
+		<li class="soundtrackItem group">
+			<div class="numberBox">
+				#2
+			</div>
+			<div class="soundtrackInfoBox">
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Title: </span><%= @user.song2 %>
+				</div>
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Artist: </span><%= @user.artist2 %>
+				</div>
+			</div>
+		</li>
 	<% end %>
 	<% if @user.song3 != "" && @user.artist3 != "" && @user.song3? && @user.artist3? %>
-		<li class="soundtrackItem">3. <%= @user.song3 %> - <%= @user.artist3 %></li>
+		<li class="soundtrackItem group">
+			<div class="numberBox">
+				#3
+			</div>
+			<div class="soundtrackInfoBox">
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Title: </span><%= @user.song3 %>
+				</div>
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Artist: </span><%= @user.artist3 %>
+				</div>
+			</div>
+		</li>
 	<% end %>
 	<% if @user.song4 != "" && @user.artist4 != "" && @user.song4? && @user.artist4? %>
-		<li class="soundtrackItem">4. <%= @user.song4 %> - <%= @user.artist4 %></li>
+		<li class="soundtrackItem group">
+			<div class="numberBox">
+				#4
+			</div>
+			<div class="soundtrackInfoBox">
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Title: </span><%= @user.song4 %>
+				</div>
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Artist: </span><%= @user.artist4 %>
+				</div>
+			</div>
+		</li>
 	<% end %>
 	<% if @user.song5 != "" && @user.artist5 != "" && @user.song5? && @user.artist5? %>
-		<li class="soundtrackItem">5. <%= @user.song5 %> - <%= @user.artist5 %></li>
+		<li class="soundtrackItem group">
+			<div class="numberBox">
+				#5
+			</div>
+			<div class="soundtrackInfoBox ">
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Title: </span><%= @user.song5 %>
+				</div>
+				<div class="soundtrackLine">
+					<span class="soundtrackLabel">Artist: </span><%= @user.artist5 %>
+				</div>
+			</div>
+		</li>
 	<% end %>
 </ul>
