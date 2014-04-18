@@ -47,11 +47,18 @@
 	</section>
 	<section>
 		<% if @user == current_user %>
-			<%= render 'shared/status_form' %>
+			<section>
+				<%= render 'shared/status_form' %>
+			</section>
+			<section>
+				<%= render 'shared/fitness_controls' %>
+			</section>
 		<% else %>
 			<%= render 'follow_form' if signed_in? %>
-	<% end %>
+		<% end %>
 	</section>
+	<section>
+
 </aside>
 
 <section class="middleContent">

@@ -11,7 +11,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140404024059) do
+ActiveRecord::Schema.define(version: 20140412001536) do
+
+  create_table "exercises", force: true do |t|
+    t.integer  "user_id"
+    t.string   "E_title"
+    t.string   "E_type"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "relationships", force: true do |t|
     t.integer  "follower_id"
@@ -23,6 +31,13 @@ ActiveRecord::Schema.define(version: 20140404024059) do
   add_index "relationships", ["followed_id"], name: "index_relationships_on_followed_id"
   add_index "relationships", ["follower_id", "followed_id"], name: "index_relationships_on_follower_id_and_followed_id", unique: true
   add_index "relationships", ["follower_id"], name: "index_relationships_on_follower_id"
+
+  create_table "routines", force: true do |t|
+    t.integer  "user_id"
+    t.string   "R_title"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
   create_table "statuses", force: true do |t|
     t.string   "content"
@@ -69,5 +84,17 @@ ActiveRecord::Schema.define(version: 20140404024059) do
 
   add_index "users", ["emailAdd"], name: "index_users_on_emailAdd", unique: true
   add_index "users", ["remember_token"], name: "index_users_on_remember_token"
+
+  create_table "workouts", force: true do |t|
+    t.integer  "user_id"
+    t.integer  "routine_id"
+    t.integer  "W_reps"
+    t.float    "W_weight"
+    t.integer  "W_sets"
+    t.float    "W_distance"
+    t.time     "W_time"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

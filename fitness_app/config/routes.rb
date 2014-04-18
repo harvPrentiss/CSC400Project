@@ -7,6 +7,7 @@ FitnessApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :statuses, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :exercises
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via:'get'

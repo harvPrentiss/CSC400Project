@@ -9,6 +9,9 @@ class User < ActiveRecord::Base
 
 	has_many :reverse_relationships, foreign_key: "followed_id", class_name: "Relationship", dependent: :destroy
 	has_many :followers, through: :reverse_relationships, source: :follower
+
+	has_many :workouts, dependent: :destroy
+	has_many :exercises, dependent: :destroy
 	
 	validates :displayName, presence: true, length: {maximum: 25}
 
@@ -41,6 +44,10 @@ class User < ActiveRecord::Base
 
 	def feed
 		Status.from_users_followed_by(self)
+	end
+
+	def exercise_list
+		Exercise.exercises_of(self)
 	end
 
 	def following?(other_user)
