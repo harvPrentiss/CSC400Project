@@ -8,6 +8,8 @@ FitnessApp::Application.routes.draw do
   resources :statuses, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
   resources :exercises
+  resources :routines
+  resources :workouts
   root 'static_pages#home'
   match '/signup', to: 'users#new', via: 'get'
   match '/signin', to: 'sessions#new', via:'get'

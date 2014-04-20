@@ -572,6 +572,23 @@ main{
 	color: $greenThemeColor;
 }
 
+/* Exercise Styles */
+
+.exercise{
+	padding: 15px 10px;
+	font-size: 14pt;
+	border-top: 1px solid $statusSeperatorColor;
+	overflow: hidden;
+}
+
+.exerciseLabel{
+	display: inline-block;
+	margin: 0 10px;
+	font-size: 14pt;
+	color: $greenThemeColor;
+	text-align: center;
+}
+
 
 /* Some generic and one off styles */
 

@@ -1,0 +1,21 @@
+<div class="centeredContainer">
+	<h1>Create A New Exercise</h1>
+	<%= form_for(@exercise) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<%= f.label :E_title, "Exercise Name", class:"formLabel" %>
+		<%= f.text_field :E_title, class:"formField" %>
+		<br>
+		<br>
+		<%= f.label :E_title, "Cardio", class:"formLabel" %>
+		<%= f.radio_button :E_type, "Cardio", class:"formFieldRadio" %>
+		<br>
+		<br>
+		<%= f.label :E_type, "Stength", class:"formLabel" %>
+		<%= f.radio_button :E_type, "Strength", class:"formFieldRadio" %>
+		<br>
+		<br>
+		<br>
+		<br>
+		<%= f.submit "Create Exercise", class: "signUpBtn" %>
+	<% end %>
+</div>

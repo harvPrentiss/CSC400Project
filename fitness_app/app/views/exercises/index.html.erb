@@ -1,1 +1,18 @@
-<h1>All exercises</h1>
+<% provide(:title, "Exercise Manager") %>
+<div class="leftContainer">
+	<!-- Create Exercises -->
+	<%= render 'new_exercise_form' %>
+</div>
+
+<div class="rightContainer">
+	<!-- Edit Exercises -->
+	<% if @exercises.any? %>
+		<h1 class="userName headingFont statusListHeading">Your Exercises</h1>	
+		<ul class="statusList">
+			<%= render @exercises %>
+		</ul>	
+	<% else %>
+
+	<% end %>
+</div>
+
