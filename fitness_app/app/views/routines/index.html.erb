@@ -1,0 +1,24 @@
+<% provide(:title, "Routine Manager") %>
+<div class="leftContainer">
+	<!-- Create routines -->
+	<%= render 'new_routine_form' %>
+</div>
+
+<div class="rightContainer">
+	<!-- Edit routines -->
+	<% if @routines.any? %>
+		<h1 class="userName headingFont statusListHeading">Your routines</h1>	
+		<ul class="statusList">
+			<%= render @routines %>
+		</ul>	
+	<% else %>
+
+	<% end %>
+</div>
+
+<div class="routineEditScreen">
+	<div class="editBox">
+
+	</div>
+</div>
+

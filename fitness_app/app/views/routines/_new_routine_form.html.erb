@@ -1,0 +1,16 @@
+<div class="centeredContainer">
+	<h1>Create A New Routine</h1>
+	<%= form_for(@exercise) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<%= f.label :R_title, "Exercise Name", class:"formLabel" %>
+		<%= f.text_field :R_title, class:"formField" %>
+		<br>
+		<br>
+		<!-- Add exercises -->
+		<br>
+		<br>
+		<br>
+		<br>
+		<%= f.submit "Create Exercise", class: "signUpBtn" %>
+	<% end %>
+</div>
