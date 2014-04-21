@@ -1,0 +1,15 @@
+<div class="leftContainer">
+	<% if @user_exercises.any? %>
+		<ul class="userExerciseList">
+			<%= render @user_exercises %>
+		</ul>
+	<% else %>
+		<h1 class="followStats">No Exercises</h1>
+	<% end %>
+</div>
+
+<div class="rightContainer">
+	<ul class="routineExerciseList">
+
+	</ul>
+</div>

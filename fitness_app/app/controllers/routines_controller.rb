@@ -27,6 +27,7 @@ class RoutinesController < ApplicationController
 	end
 
 	def edit
+		@user_exercises = current_user.exercises
 		respond_to do |format|
 		  format.html
 		  format.js
