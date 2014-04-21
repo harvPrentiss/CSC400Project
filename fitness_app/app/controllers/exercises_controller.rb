@@ -25,6 +25,13 @@ class ExercisesController < ApplicationController
 		redirect_back_or exercises_path
 	end
 
+	def edit
+		respond_to do |format|
+		  format.html
+		  format.js
+		end
+	end
+
 
 
 	private
