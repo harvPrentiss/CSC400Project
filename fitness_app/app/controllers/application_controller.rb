@@ -4,5 +4,5 @@ class ApplicationController < ActionController::Base
   protect_from_forgery with: :exception
   include SessionsHelper
 
-  layout Proc.new { |controller| controller.request.xhr? ? nil : 'application' }
+  layout Proc.new { |controller| controller.request.xhr? ? false : 'application' }
 end
