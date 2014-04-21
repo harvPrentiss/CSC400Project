@@ -1,0 +1,9 @@
+<li id="<%= routine.id %>">
+  <div class="exercise">
+	    <h1 class="exerciseLabel"><span class='noColor'>Name:</span> <%= routine.R_title %></h1>
+	    <% if current_user?(routine.user) %>
+	    	<!--<%= link_to "Edit", edit_routine_path(routine.id), :remote => true, class:"followStats right" %> -->
+	    	<%= link_to "Delete", routine, method: :delete, data: {confirm:"You sure?"}, title: routine.R_title, class:"followStats deleteLink right" %>
+	    <% end %>
+  </div>
+</li>

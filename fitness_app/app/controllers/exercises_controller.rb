@@ -7,6 +7,7 @@ class ExercisesController < ApplicationController
 	end
 
 	def create
+		@exercises = current_user.exercises.paginate(page: params[:page], per_page: 15)
 		@exercise = current_user.exercises.build(exercise_params)
 		store_location
 		if @exercise.save

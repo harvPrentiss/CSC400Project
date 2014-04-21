@@ -11,7 +11,18 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140412001536) do
+ActiveRecord::Schema.define(version: 20140421172412) do
+
+  create_table "exercise_routines", force: true do |t|
+    t.integer  "exercise_id"
+    t.integer  "routine_id"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
+
+  add_index "exercise_routines", ["exercise_id", "routine_id"], name: "index_exercise_routines_on_exercise_id_and_routine_id", unique: true
+  add_index "exercise_routines", ["exercise_id"], name: "index_exercise_routines_on_exercise_id"
+  add_index "exercise_routines", ["routine_id"], name: "index_exercise_routines_on_routine_id"
 
   create_table "exercises", force: true do |t|
     t.integer  "user_id"

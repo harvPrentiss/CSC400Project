@@ -20,4 +20,29 @@
 # available at http://guides.rubyonrails.org/i18n.html.
 
 en:
-  hello: "Hello world"
+  activerecord:
+    attributes:
+      routine:
+        R_title: "Routine Name"
+      exercise:
+        E_title: "Exercise Name"
+        E_type: "Exercise Type"
+      user:
+        emailAdd: "Email Address"
+        displayName: "Name"
+        song1: "Song Title"
+        song2: "Song Title"
+        song3: "Song Title"
+        song4: "Song Title"
+        song5: "Song Title"
+        artist1: "Song Artist"
+        artist2: "Song Artist"
+        artist3: "Song Artist"
+        artist4: "Song Artist"
+        artist5: "Song Artist"
+    errors:
+      models:
+        routine:
+          attributes:
+            R-title:
+              blank: "is required"

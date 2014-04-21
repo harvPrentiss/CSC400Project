@@ -1,0 +1,13 @@
+<div class="centeredContainer">
+	<h1>Create A New Routine</h1>
+	<%= form_for(@routine) do |f| %>
+		<%= render 'shared/error_messages', object: f.object %>
+		<%= f.label :R_title, "Routine Name", class:"formLabel" %>
+		<%= f.text_field :R_title, class:"formField" %>
+		<br>
+		<br>
+		<br>
+		<br>
+		<%= f.submit "Create Routine", class: "signUpBtn" %>
+	<% end %>
+</div>
