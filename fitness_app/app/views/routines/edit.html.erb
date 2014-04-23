@@ -1,5 +1,6 @@
 <div class="leftContainer">
 	<% if @user_exercises.any? %>
+	<h1 class="followStats">Your Exercise List</h1>
 		<ul class="userExerciseList">
 			<%= render @user_exercises %>
 		</ul>
@@ -9,6 +10,7 @@
 </div>
 
 <div class="rightContainer">
+	<h1 class="followStats">Routine Exercise List</h1>
 	<ul class="routineExerciseList">
 
 	</ul>
