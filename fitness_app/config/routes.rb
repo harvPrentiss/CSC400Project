@@ -7,6 +7,7 @@ FitnessApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :statuses, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
+  resources :exercise_routines
   resources :exercises
   resources :routines
   resources :workouts
@@ -16,6 +17,7 @@ FitnessApp::Application.routes.draw do
   match '/signout', to: 'sessions#destroy', via: 'delete'
   get 'static_pages/help'
   get 'static_pages/about'
+  match 'routines/:routineID/exercise_routines/create/', to: 'exercise_routines#create', :via => :get
 
   
 

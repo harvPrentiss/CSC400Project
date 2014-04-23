@@ -1,7 +1,8 @@
+<h1 class="hidden" id="<%= @routine.id %>"></h1>
 <div class="leftContainer">
 	<% if @user_exercises.any? %>
-	<h1 class="followStats">Your Exercise List</h1>
-		<ul class="userExerciseList">
+	<h1 class="userName headingFont statusListHeading">Your Exercise List</h1>
+		<ul id="userExerciseList" class="sortableList">
 			<%= render @user_exercises %>
 		</ul>
 	<% else %>
@@ -10,8 +11,12 @@
 </div>
 
 <div class="rightContainer">
-	<h1 class="followStats">Routine Exercise List</h1>
-	<ul class="routineExerciseList">
-
+	<h1 class="userName headingFont statusListHeading">Routine Exercise List</h1>
+	<ul id="routineExerciseList" class="sortableList">
+		<% if @routine_exercises.any? %>
+			<%= render @routine_exercises %>
+		<% end %>
 	</ul>
+	<br>
+	<a href="#" class="signUpBtn center exrtEdit">Save Changes</a>
 </div>

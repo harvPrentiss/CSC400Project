@@ -8,6 +8,7 @@ $statusSeperatorColor: hsl(0, 0%, 25%);
 $redWarningColor: hsl(0, 96%, 39%);
 $alertBackground: hsl(118, 20%, 75%);
 $timestampColor: hsl(0, 0%, 45%);
+$mainBackgroundColor: hsl(70, 8%, 15%);
 
 html
 {
@@ -19,7 +20,7 @@ body
 	margin: 0;
 	overflow-x: hidden;
 	font-size: 14pt;
-	background-color: #272822;
+	background-color: $mainBackgroundColor;
 	color: $mainTextColor;
 }
 
@@ -295,7 +296,7 @@ main{
 	color: $greenThemeColor;
 	z-index: 10;
 	&:hover{
-		background-color: #272822;
+		background-color: $mainBackgroundColor;
 		color: $greenThemeColorHighlight;
 	}
 }
@@ -483,7 +484,7 @@ main{
 	font-size: 14pt;
 	border-right: 1px solid $mainTextColor;
 	&:hover{
-		background-color: #272822;
+		background-color: $mainBackgroundColor;
 	}
 }
 
@@ -581,12 +582,27 @@ main{
 	overflow: hidden;
 }
 
+.exerciseMover{
+	@extend .exercise;
+	border: none;
+}
+
 .exerciseLabel{
 	display: inline-block;
 	margin: 0 10px;
 	font-size: 14pt;
 	color: $greenThemeColor;
 	text-align: center;
+}
+
+.sortableList{
+	@extend .statusList;
+	min-height: 56px;
+}
+
+.dragDropHighlight{ 
+	height: 56px; 
+	background-color: $greenThemeColor; 
 }
 
 

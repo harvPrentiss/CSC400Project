@@ -27,7 +27,9 @@ class RoutinesController < ApplicationController
 	end
 
 	def edit
+		@routine = Routine.find(params[:id])
 		@user_exercises = current_user.exercises
+		@routine_exercises = @routine.exercises
 		respond_to do |format|
 		  format.html
 		  format.js
