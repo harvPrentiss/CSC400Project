@@ -9,12 +9,12 @@ $(document).ready(function(){
 
 
 	$('.exrtEdit').on("click", function(){
-		var exIDs = getExIDs();
-		var target = "exercise_routine/create";
+		var routine = $('.hidden').attr('id');
 		$.ajax({
-		    type: 'GET',
-		    url: target + '?order=' + exIDs,
-		    data: exIDs
+		    type: 'PUT',
+		    url: 'update',
+		    data: { exercise_ids: getExIDs() },
+  			success: function() {}
 		});
 
 	});
@@ -25,7 +25,6 @@ $(document).ready(function(){
 			var exID = $(this).attr("id");
 			newOrder.push(exID);
 		});
-		newOrder.push($('.hidden').attr('id'));
 		return newOrder.join(',');
 	}
 

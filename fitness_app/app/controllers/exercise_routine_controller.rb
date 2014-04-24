@@ -2,16 +2,11 @@ class ExerciseRoutineController < ApplicationController
 	before_action :signed_in_user
 
 	def create
-		@data = params[:order].split(',')
-		@routineID = @data.last
-		@routine = Routines.find(@routineID)
-		@data.remove(@data.length - 1)
-		@data.each do |exID|
-			@routine.exercise_routine.create(:exercise_id => exID)
-		end
-		current_user.follow!(@user)
+		@routine = Routine.find(params[:exercise_routine][:routine_id])
+		@exercise = Exercise.find(params[:exercise_routine][:exercise_id])
+		@routine.add_exercise!(@exercise)
 		respond_to do |format|
-			format.html {redirect_to @user}
+			format.html {redirect_to @routine}
 			format.js
 		end
 	end

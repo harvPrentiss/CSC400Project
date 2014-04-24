@@ -4,4 +4,8 @@ class Routine < ActiveRecord::Base
 	has_many :exercises, :through => :exercise_routines
 
 	validates :R_title, presence: true, uniqueness: { case_sensitive: false}
+
+	def add_exercise!(exID)
+		exercises.create!(exercise_id: exID)
+	end
 end
