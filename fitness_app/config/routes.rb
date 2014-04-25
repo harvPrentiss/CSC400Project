@@ -7,7 +7,7 @@ FitnessApp::Application.routes.draw do
   resources :sessions, only: [:new, :create, :destroy]
   resources :statuses, only: [:create, :destroy]
   resources :relationships, only: [:create, :destroy]
-  resources :exercise_routines
+  resources :exercise_routines, only: [:create, :destroy]
   resources :exercises
   resources :routines 
   match 'routines/:id/update', to: 'routines#update', via:'put'

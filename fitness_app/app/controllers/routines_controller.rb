@@ -29,7 +29,7 @@ class RoutinesController < ApplicationController
 	def edit
 		@routine = Routine.find(params[:id])
 		@user_exercises = current_user.exercises
-		@routine_exercises = @routine.exercises
+		@routine_exercises = @routine.exercise_list
 		respond_to do |format|
 		  format.html
 		  format.js
@@ -37,11 +37,15 @@ class RoutinesController < ApplicationController
 	end
 
 	def update
-	  @routine = Routine.find(params[:id])
-	  @current_routine_list = @routine.exercises 
-	  @new_routine_list = params[:exercise_ids].split(',')
-	  update_routine_list(@current_routine_list, @new_routine_list, @routine)
-	  @routine.save
+	  	@routine = Routine.find(params[:id])
+	  	@exercises = params[:exercise_ids]
+	  	@exercises.each do |exID|
+	  		@exRT = ExerciseRoutine.create(routine_id: @routine.id, exercise_id: exID)
+	  		@exRT.save
+	  	end
+	  	flash[:success] = 'Routine exercise list updated.'
+		flash.keep(:success)
+		render js: "window.location = '#{routines_path}'"
 	end
 
 

@@ -5,7 +5,7 @@ class Routine < ActiveRecord::Base
 
 	validates :R_title, presence: true, uniqueness: { case_sensitive: false}
 
-	def add_exercise!(exID)
-		exercises.create!(exercise_id: exID)
+	def exercise_list
+		Exercise.part_of(self)
 	end
 end

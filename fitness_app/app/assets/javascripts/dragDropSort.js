@@ -8,24 +8,29 @@ $(document).ready(function(){
 	});
 
 
-	$('.exrtEdit').on("click", function(){
-		var routine = $('.hidden').attr('id');
-		$.ajax({
-		    type: 'PUT',
-		    url: 'update',
-		    data: { exercise_ids: getExIDs() },
-  			success: function() {}
-		});
-
+	$('.exrtEdit').on("click", function(e){
+		e.stopPropagation();
+		e.preventDefault();
+		if($('#routineExerciseList').children.length != 0){
+			var routine = $('.hidden').attr('id');
+			$.ajax({
+			    type: 'PUT',
+			    url: 'update',
+			    dataType: 'html',
+			    data: { exercise_ids: getExIDs() },
+	  			success: function() { },
+	  			error: function(xhr, textStatus, errorThrown){
+	       			alert("failure");}
+			});
+		}
 	});
 
-	function getExIDs(element){
-		var newOrder = new Array();
-		$('#routineExerciseList').children().each(function(){
-			var exID = $(this).attr("id");
-			newOrder.push(exID);
+	function getExIDs(){
+		var newOrder = []; 
+		$('#routineExerciseList li').each(function(){
+			newOrder.push($(this).attr('id'));
 		});
-		return newOrder.join(',');
+		return newOrder;
 	}
 
 

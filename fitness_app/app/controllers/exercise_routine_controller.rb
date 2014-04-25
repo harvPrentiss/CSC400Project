@@ -1,4 +1,4 @@
-class ExerciseRoutineController < ApplicationController
+class Exercise_RoutineController < ApplicationController
 	before_action :signed_in_user
 
 	def create

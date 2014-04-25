@@ -7,6 +7,9 @@ class Exercise < ActiveRecord::Base
 	validates :E_type, presence: true, length: {maximum: 20}
 
 
-
+	def self.part_of(routine)
+		exercise_list = "SELECT exercise_id FROM exercise_routines WHERE routine_id = :routine_id" 
+		where("exercise_id IN (#{exercise_list})")
+	end
 	
 end
