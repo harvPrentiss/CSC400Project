@@ -38,14 +38,14 @@ class RoutinesController < ApplicationController
 
 	def update
 	  	@routine = Routine.find(params[:id])
-	  	@exercises = params[:exercise_ids]
-	  	@exercises.each do |exID|
-	  		@exRT = ExerciseRoutine.create(routine_id: @routine.id, exercise_id: exID)
-	  		@exRT.save
-	  	end
-	  	flash[:success] = 'Routine exercise list updated.'
+	  	@exercises = Exercise.find(params[:exercise_ids].split(','))
+	  	@routine.exercises = @exercises
+	  	flash[:success] = "#{@routine.R_title} exercise list updated."
 		flash.keep(:success)
-		render js: "window.location = '#{routines_path}'"
+		respond_to do |format|
+		  format.html { redirect_to routines_path, status: 303 }
+		  format.js
+		end
 	end
 
 

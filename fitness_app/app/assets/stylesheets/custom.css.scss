@@ -579,6 +579,7 @@ main{
 	padding: 15px 10px;
 	font-size: 14pt;
 	border-top: 1px solid $statusSeperatorColor;
+	background-color: $textFieldBackColor;
 	overflow: hidden;
 }
 
@@ -602,7 +603,7 @@ main{
 
 .dragDropHighlight{ 
 	height: 56px; 
-	background-color: $greenThemeColor; 
+	background-color: $mainBackgroundColor; 
 }
 
 

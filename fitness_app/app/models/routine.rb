@@ -1,7 +1,8 @@
 class Routine < ActiveRecord::Base
 	belongs_to :user
-	has_many :exercise_routines, foreign_key: "exercise_id", dependent: :destroy
-	has_many :exercises, :through => :exercise_routines
+	
+	has_many :programs, dependent: :destroy
+	has_many :exercises, through: :programs
 
 	validates :R_title, presence: true, uniqueness: { case_sensitive: false}
 

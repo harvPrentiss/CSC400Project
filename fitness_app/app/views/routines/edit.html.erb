@@ -13,8 +13,8 @@
 <div class="rightContainer">
 	<h1 class="userName headingFont statusListHeading">Routine Exercise List</h1>
 	<ul id="routineExerciseList" class="sortableList">
-		<% if @routine_exercises.any? %>
-			<%= render @routine_exercises %>
+		<% if @routine.exercises.any? %>
+			<%= render @routine.exercises %>
 		<% end %>
 	</ul>
 	<br>
