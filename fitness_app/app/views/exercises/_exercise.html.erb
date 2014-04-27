@@ -2,7 +2,7 @@
   <div class="exercise">
 	    <h1 class="exerciseLabel"><span class='noColor'>Name:</span> <%= exercise.E_title %></h1>
 	    <h1 class="exerciseLabel"><span class='noColor'>Type:</span> <%= exercise.E_type %></h1>
-	    <% if current_user?(exercise.user) %>
+	    <% if current_user?(exercise.user) && @exerciseEdit %>
 	    	<!--<%= link_to "Edit", edit_exercise_path(exercise.id), :remote => true, class:"followStats right" %> -->
 	    	<%= link_to "Delete", exercise, method: :delete, data: {confirm:"You sure?"}, title: exercise.E_title, class:"followStats deleteLink right" %>
 	    <% end %>

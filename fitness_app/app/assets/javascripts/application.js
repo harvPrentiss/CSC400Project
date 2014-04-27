@@ -39,7 +39,7 @@ ready = function(){
 			$('#Soundtrack').removeClass('hidden');
 		}
 		else if($(this).text() == "Workouts"){
-			$('#Routines').removeClass('hidden');
+			$('#Workouts').removeClass('hidden');
 		}
 	})
 

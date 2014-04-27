@@ -1,0 +1,6 @@
+<ul class="statList">
+	<h1 class="soundtrackHeader">My Workouts</h1>
+	<% if @user.routines.any? %>
+		<%= render @workouts %>
+	<% end %>
+</ul>

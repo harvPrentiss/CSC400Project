@@ -4,6 +4,7 @@ class ExercisesController < ApplicationController
 	def index
 		@exercises = current_user.exercises.paginate(page: params[:page], per_page: 15)
 		@exercise = current_user.exercises.build
+		@exerciseEdit = true
 	end
 
 	def create

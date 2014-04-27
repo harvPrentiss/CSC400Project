@@ -13,6 +13,8 @@ class UsersController < ApplicationController
 		@status = current_user.statuses.build
 		@statuses = current_user.feed.paginate(page: params[:page], per_page: 15)
 		@buddies = @user.followed_users
+		@workouts = @user.routines
+		@workoutEdit = false
 		respond_to do |format|
 		  format.html
 		  format.js

@@ -23,7 +23,9 @@
 							<% unless @user.hideSoundtrack %>
 								<li class="profileCardBackListItem" style="width:40%;">Soundtrack</li>
 							<% end %>
-						
+							<% unless @user.hideWorkouts %>
+								<li class="profileCardBackListItem" style="width:35%;">Workouts</li>
+							<% end %>
 							<div class="hidden cardBackContent" id="Stats">
 								<%= render 'shared/profile_card_stats' %>
 							</div>
@@ -31,6 +33,7 @@
 								<%= render 'shared/profile_card_soundtrack' %>
 							</div>
 							<div class="hidden cardBackContent" id="Workouts">
+								<%= render 'shared/profile_card_workouts' %>
 							</div>
 						<% else %>
 							<li class="privateInfoMessage">Info hidden by the user</li>

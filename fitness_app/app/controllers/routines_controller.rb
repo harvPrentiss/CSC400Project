@@ -4,6 +4,7 @@ class RoutinesController < ApplicationController
 	def index
 		@routines = current_user.routines.paginate(page: params[:page], per_page: 15)
 		@routine = current_user.routines.build
+		@workoutEdit = true
 	end
 
 	def create
@@ -46,6 +47,11 @@ class RoutinesController < ApplicationController
 		  format.html { redirect_to routines_path, status: 303 }
 		  format.js
 		end
+	end
+
+	def show
+		@routine = Routine.find(params[:id])
+		@exerciseEdit = false;
 	end
 
 
