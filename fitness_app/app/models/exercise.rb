@@ -3,6 +3,7 @@ class Exercise < ActiveRecord::Base
 	
 	has_many :programs, dependent: :destroy
 	has_many :routines, through: :programs
+	has_many :workouts, dependent: :destroy
 	
 	validates :user_id, presence: true
 	validates :E_title, presence: true, length: {maximum: 20}

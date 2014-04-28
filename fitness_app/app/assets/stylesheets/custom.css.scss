@@ -154,6 +154,7 @@ main{
 }
 
 .statusPostBox{
+	box-sizing: border-box;
 	background-color: $textFieldBackColor;
 	color: $mainTextColor;
 	border: 1px solid $textFieldBackColor;
@@ -604,6 +605,11 @@ main{
 .dragDropHighlight{ 
 	height: 56px; 
 	background-color: $mainBackgroundColor; 
+}
+
+.workOutLog{
+	background: $mainBackgroundColor;
+	padding: 10px;
 }
 
 
