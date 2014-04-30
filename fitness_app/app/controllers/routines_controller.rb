@@ -51,8 +51,9 @@ class RoutinesController < ApplicationController
 
 	def show
 		@routine = Routine.find(params[:id])
+		@exercises = @routine.exercises
 		@exerciseEdit = false;
-		@workout = @routine.workouts.build(workout_params)
+		@workout = Workout.new(params[:workout])
 	end
 
 
@@ -63,9 +64,7 @@ class RoutinesController < ApplicationController
   			params.require(:routine).permit(:R_title);
   		end
 
-  		def workout_params
-  			params.require(:workout).permit(:routine_id);
-  		end
+  		
 
   		def update_routine_list(old_list, new_list, routine)
   			if (!old_list.any?)

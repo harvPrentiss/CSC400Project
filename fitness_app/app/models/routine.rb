@@ -3,7 +3,6 @@ class Routine < ActiveRecord::Base
 	
 	has_many :programs, dependent: :destroy
 	has_many :exercises, through: :programs
-	has_many :workouts, dependent: :destroy
 
 	validates :R_title, presence: true, uniqueness: { case_sensitive: false}
 

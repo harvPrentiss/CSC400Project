@@ -1,0 +1,40 @@
+<li id="<%= exercise.id %>">
+  <div class="exercise">
+	    <h1 class="exerciseLabel"><span class='noColor'>Name:</span> <%= exercise.E_title %></h1>
+	    <h1 class="exerciseLabel"><span class='noColor'>Type:</span> <%= exercise.E_type %></h1>
+	    <a href="#" class="workoutLogBtn">Log</a>
+
+    	<div class="workOutLog">
+    		<%= form_for(@workout) do |f| %>
+				<%= render 'shared/error_messages', object: f.object %>
+				<% if exercise.E_type == "Strength" %>
+					<%= f.label :W_weight, "Weight(lbs)", class:"formLabel" %>
+					<%= f.text_field :W_weight, class:"formField" %>
+					<br>
+					<br>
+					<%= f.label :W_reps, "Reps", class:"formLabel" %>
+					<%= f.text_field :W_reps, class:"formField" %>
+					<br>
+					<br>
+					<%= f.label :W_sets, "Sets", class:"formLabel" %>
+					<%= f.text_field :W_sets, class:"formField" %>
+				<% else %>
+					<%= f.label :W_distance, "Distance", class:"formLabel" %>
+					<%= f.text_field :W_distance, class:"formField" %>
+					<br>
+					<br>
+					<%= f.label :W_time, "Time", class:"formLabel" %>
+					<%= f.text_field :W_time, class:"formField" %>
+				<% end %>
+				<br>
+				<br>
+				<%= f.text_area :notes, placeholder: "Notes...", class:"statusPostBox" %>
+				<br>
+				<br>
+				<%= f.submit "Log Workout", class: "signUpBtn" %>
+				<%= f.hidden_field :user_id, value: exercise.user_id %>
+				<%= f.hidden_field :exercise_id, value: exercise.id %>
+			<% end %> 
+	    </div>
+  </div>
+</li>
