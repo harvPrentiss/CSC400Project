@@ -265,7 +265,7 @@ main{
 	color: $greenThemeColor;
 	z-index: 99;
 	text-indent: -9999px;
-	background: url(pulseIconSprite.png) no-repeat;
+	background: image-url('pulseIconSprite.png');
 	&:hover{
 		color: $greenThemeColorHighlight;
 		background-position: 0 -60px;
@@ -357,7 +357,7 @@ main{
 .deleteLink{
 	width: 29px;
 	height: 25px;
-	background: url(deleteIconSprite.png) no-repeat;
+	background: image-url('deleteIconSprite.png');
 	text-indent: -9999px;
 	&:hover{
 		background-position: 0 -25px;
@@ -622,7 +622,7 @@ main{
 	color: $greenThemeColor;
 	z-index: 99;
 	text-indent: -9999px;
-	background: url(logIcon.png) no-repeat;
+	background: image-url('logIcon.png');
 	&:hover{
 		color: $greenThemeColorHighlight;
 		background-position: 0 -35px;
