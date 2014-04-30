@@ -2,20 +2,9 @@
 	<h1 class="userName"><%= @routine.R_title %> Exercises</h1>
 
 	<ul class="exerciseList">
-		<% if @routine.exercises.any? %>
-			<%= render @routine.exercises %>
+		<% if @exercises.any? %>
+			<%= render partial: 'shared/advanced_exercise_list', collection: @exercises, as: :exercise %>
 		<% end %>
 	</ul>
 
-	<a href="#" class="signUpBtn center addWorkout">Log A Workout</a>
-
-	<div class='hidden'>
-		<<%= form_for(@workout) do |f| %>
-      		<%= render 'shared/error_messages', object: f.object %>
-
-      		<h1 class="userName headingFont centered">Account Info</h1>
-
-		    
-
-		<% end %>
 </div>

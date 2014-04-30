@@ -1,6 +1,6 @@
 <li id="<%= exercise.id %>">
   <div class="exercise">
-	    <h1 class="exerciseLabel"><span class='noColor'>Name:</span> <%= exercise.E_title %></h1>
+	    <h1 class="exerciseLabel"><span class='noColor'>Name:</span> <%= link_to exercise.E_title, exercise %></h1>
 	    <h1 class="exerciseLabel"><span class='noColor'>Type:</span> <%= exercise.E_type %></h1>
 	    <% if current_user?(exercise.user) && @exerciseEdit %>
 	    	<!--<%= link_to "Edit", edit_exercise_path(exercise.id), :remote => true, class:"followStats right" %> -->

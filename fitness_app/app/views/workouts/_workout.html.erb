@@ -1,0 +1,13 @@
+<li id="<%= workout.id %>">
+  <div class="workout">
+  	<% if workout.W_reps %>
+	    <h1 class="exerciseLabel"><span class="noColor">Reps: </span><%= workout.W_reps %></h1>
+	    <h1 class="exerciseLabel"><span class="noColor">Sets: </span><%= workout.W_sets %></h1>
+	    <h1 class="exerciseLabel"><span class="noColor">Weight: </span><%= workout.W_weight %></h1>
+	<% else %>
+	    <h1 class="exerciseLabel"><span class="noColor">Distance: </span><%= workout.W_distance %></h1>
+	    <h1 class="exerciseLabel"><span class="noColor">Time: </span><%= workout.W_time.strftime("%H:%M:%S") %></h1>
+	<% end %>
+		<h1 class="exerciseLabel"><span class="noColor">Date: </span><%= workout.created_at.strftime("%m/%d/%Y") %></h1>
+  </div>
+</li>

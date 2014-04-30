@@ -9,8 +9,8 @@ class WorkoutsController < ApplicationController
 			@exercise = Exercise.find(workout_params['exercise_id'])
 			@exercise.workouts << @workout
 			@exercise.save
-			redirect_back_or routines_path
 		end
+		redirect_to :back
 	end
 
 

@@ -612,6 +612,22 @@ main{
 	padding: 10px;
 }
 
+.workoutLogBtn{
+	height: 35px;
+	width: 25px;
+	float: left;
+	font-size: 20pt;
+	text-decoration: none;
+	color: $greenThemeColor;
+	z-index: 99;
+	text-indent: -9999px;
+	background: url(logIcon.png) no-repeat;
+	&:hover{
+		color: $greenThemeColorHighlight;
+		background-position: 0 -35px;
+	}
+}
+
 
 /* Some generic and one off styles */
 

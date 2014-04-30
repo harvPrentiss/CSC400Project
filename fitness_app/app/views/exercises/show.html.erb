@@ -1,0 +1,10 @@
+<div class="centeredContainer">
+	<h1 class="userName"><%= @exercise.E_title %></h1>
+
+	<ul class="workoutList">
+		<% if @workouts.any? %>
+			<%= render @workouts %>
+		<% end %>
+	</ul>
+
+</div>
