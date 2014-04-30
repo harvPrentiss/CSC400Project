@@ -1,9 +1,21 @@
 <div class="centeredContainer">
 	<h1 class="userName"><%= @routine.R_title %> Exercises</h1>
+
 	<ul class="exerciseList">
 		<% if @routine.exercises.any? %>
 			<%= render @routine.exercises %>
 		<% end %>
 	</ul>
+
 	<a href="#" class="signUpBtn center addWorkout">Log A Workout</a>
+
+	<div class='hidden'>
+		<<%= form_for(@workout) do |f| %>
+      		<%= render 'shared/error_messages', object: f.object %>
+
+      		<h1 class="userName headingFont centered">Account Info</h1>
+
+		    
+
+		<% end %>
 </div>
