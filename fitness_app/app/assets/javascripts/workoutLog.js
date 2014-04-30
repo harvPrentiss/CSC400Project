@@ -1,5 +1,4 @@
-$(document).ready(function(){
-	$('.workOutLog').toggle();
+$(document).on('page:load', function(){
 	$('.workoutLogBtn').on('click', function(e){
 		e.preventDefault();
 		e.stopPropagation();

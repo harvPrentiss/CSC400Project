@@ -1,4 +1,4 @@
-$(document).ready(function(){	
+$(document).on('page:load', function(){	
 
 	// Makes the lists to add and remove exercises from routines sortable, drag and droppable.
 	$('#userExerciseList').sortable({
